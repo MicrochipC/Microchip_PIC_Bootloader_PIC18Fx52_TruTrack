@@ -1,3 +1,6 @@
+# Upload using Linux or Mac.
+# For full instructions, see http://www.microchipc.com/PIC18bootload/
+
 #!/bin/bash
 # -*- coding: utf-8 -*-
 # Program to upload HEX files to PIC18F452
