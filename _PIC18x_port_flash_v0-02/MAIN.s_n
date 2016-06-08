@@ -1,0 +1,8 @@
+[SQTP]
+Enabled=0
+StartLocation=0
+Lenght(Bytes)=0
+SerialNumber=3
+SerialNumber_Increase_After_Programming=1
+SerialNumber_Random=0
+SerialNumber_In_Data_Memory=0

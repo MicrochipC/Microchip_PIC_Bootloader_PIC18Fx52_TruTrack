@@ -1,0 +1,162 @@
+
+
+HI-TECH Software PICC-18 Macro Assembler V8.35PL2
+Serial number: HCPIC18-15668                           Fri Jan  7 08:58:08 2005
+
+Licensed to: DESIGNREM LTD
+     1                           	processor	18F452
+     2                           	opt	pw 80
+     3                           	psect	__Z15668RS_,global,delta=1
+     4                           	psect	text,global,reloc=2,class=CODE,delta=1
+     5                           	psect	intsave_regs,global,class=BIGRAM,space=1,
+      +                          delta=1
+     6  000000                     
+     7  000000                     
+     8  000000                     
+     9  000000                     
+    10  000000                     
+    11  000000                     
+    12  000000                     
+    13  000000                     
+    14  000000                     
+    15  000000                     
+    16  000000                     
+    17  000000                     
+    18  000000                     
+    19  000000                     
+    20  000000                     
+    21  000000                     
+    22  000000                     
+    23  000000                     
+    24  000000                     
+    25  000000                     
+    26  000000                     
+    27  000000                     
+    28  000000                     
+    29  000000                     
+    30  000000                     
+    31  000000                     
+    32  000000                     
+    33  000000                     
+    34  000000                     
+    35  000000                     
+    36  000000                     
+    37  000000                     
+    38  000000                     
+    39  000000                     
+    40  000000                     
+    41  000000                     
+    42  000000                     
+    43  000000                     
+    44  000000                     
+    45  000000                     
+    46  000000                     
+    47  000000                     
+    48  000000                     
+    49  000000                     
+    50  000000                     
+    51  000000                     
+    52  000000                     
+    53  000000                     
+    54  000000                     
+    55  000000                     
+    56  000000                     
+    57  000000                     
+    58  000000                     
+    59  000000                     
+    60  000000                     
+    61  000000                     
+    62  000000                     
+    63  000000                     
+    64  000000                     
+    65  000000                     
+    66  000000                     
+    67  000000                     
+    68  000000                     
+    69  000000                     
+    70  000000                     
+    71  000000                     
+    72  000000                     
+    73  000000                     
+    74  000000                     
+    75  000000                     
+    76  000000                     
+    77  000000                     
+    78  000000                     
+    79  000000                     
+    80  000000                     
+    81  000000                     
+    82  000000                     
+    83  000000                     
+    84  000000                     
+    85  000000                     
+    86  000000                     
+    87  000000                     
+    88  000000                     
+    89  000000                     
+    90  000000                     
+    91  000000                     
+    92  000000                     
+    93  000000                     
+    94  000000                     
+    95                           
+    96                           	psect	__Z15668RS_
+    97  007BB2                     
+    98  007BB2                     
+    99                           
+   100                           	psect	text
+   101  007BEA                     _DelayMs:
+   102  007BEA  FFFF               	dw	65535
+   103  007BEC                     f12:
+   104  000000                     
+   105                           ; _cnt loaded to fsr0l
+   106  007BEC  6EE9               	movwf	fsr0l,c
+   107                           ;delay.c: 13: unsigned char i;
+   108  007BEE                     l2:
+   109                           ;delay.c: 19: } ;
+   110  007BEE  06E9               	decf	fsr0l,f,c
+   111  007BF0  28E9               	incf	fsr0l,w,c
+   112  007BF2  B4D8               	btfsc	status,2,c
+   113  007BF4  D00E               	goto	u20
+   114                           ;delay.c: 15: i=4;
+   115  007BF6  0E04               	movlw	4
+   116  007BF8  6EE1               	movwf	fsr1l,c
+   117                           ;delay.c: 16: while(i--) {
+   118  007BFA                     l5:
+   119                           ;delay.c: 18: } ;
+   120  007BFA  06E1               	decf	fsr1l,f,c
+   121  007BFC  28E1               	incf	fsr1l,w,c
+   122  007BFE  B4D8               	btfsc	status,2,c
+   123  007C00  D7F6               	goto	l2
+   124                           ;delay.c: 17: { unsigned char _dcnt; if(238>=4) 
+      +                          _dcnt=(238*((4*1)/(4*1))/2); else _dcnt=1; while
+      +                          (--_dcnt > 0) { asm("nop"); asm("nop"); continue
+      +                          ; } };
+   125  007C02  0E77               	movlw	119
+   126  007C04  6ED9               	movwf	fsr2l,c
+   127  007C06  D002               	goto	L1
+   128  007C08                     l11:
+   129  007C08  F000               	nop		;#
+   130  007C0A  F000               	nop		;#
+   131  007C0C                     L1:
+   132  007C0C  2ED9               	decfsz	fsr2l,f,c
+   133  007C0E  D7FC               	goto	l11
+   134  007C10  D7F4               	goto	l5
+   135  007C12                     u20:
+   136                           ;delay.c: 20: }
+   137  007C12  0012               	return	
+   138  007C14  FFFF               	dw	65535
+   139  007C16  D7EA               	goto	f12
+   140                           fsr0l	equ	0xFE9
+   141                           fsr1l	equ	0xFE1
+   142                           fsr2l	equ	0xFD9
+   143                           status	equ	0xFD8
+
+
+HI-TECH Software PICC-18 Macro Assembler V8.35PL2
+Symbol Table                                           Fri Jan  7 08:58:08 2005
+
+          l2 7BEE            l5 7BFA           f12 7BEC  
+         l11 7C08           u20 7C12         fsr0l 000FE9  
+       fsr1l 000FE1         fsr2l 000FD9      _DelayMs 7BEA  
+      status 000FD8      __Lparam 050B      __ramtop 0600  

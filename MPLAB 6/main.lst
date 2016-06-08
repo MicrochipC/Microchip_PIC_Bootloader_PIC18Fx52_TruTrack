@@ -1,0 +1,170 @@
+
+
+HI-TECH Software PICC-18 Macro Assembler V8.35PL2
+Serial number: HCPIC18-15668                           Fri Jan  7 08:58:07 2005
+
+Licensed to: DESIGNREM LTD
+     1                           	processor	18F452
+     2                           	opt	pw 80
+     3                           	psect	__Z15668RS_,global,delta=1
+     4                           	psect	text,global,reloc=2,class=CODE,delta=1
+     5                           	psect	config,global,class=CONFIG,delta=1
+     6                           	psect	eeprom_data,global,class=EEDATA,delta=1
+     7                           	psect	intsave_regs,global,class=BIGRAM,space=1,
+      +                          delta=1
+     8  000000                     
+     9  000000                     
+    10  000000                     
+    11  000000                     
+    12  000000                     
+    13  000000                     
+    14  000000                     
+    15  000000                     
+    16  000000                     
+    17  000000                     
+    18  000000                     
+    19  000000                     
+    20  000000                     
+    21  000000                     
+    22  000000                     
+    23  000000                     
+    24  000000                     
+    25  000000                     
+    26  000000                     
+    27  000000                     
+    28  000000                     
+    29  000000                     
+    30  000000                     
+    31  000000                     
+    32  000000                     
+    33  000000                     
+    34  000000                     
+    35  000000                     
+    36  000000                     
+    37  000000                     
+    38  000000                     
+    39  000000                     
+    40  000000                     
+    41  000000                     
+    42  000000                     
+    43  000000                     
+    44  000000                     
+    45  000000                     
+    46  000000                     
+    47  000000                     
+    48  000000                     
+    49  000000                     
+    50  000000                     
+    51  000000                     
+    52  000000                     
+    53  000000                     
+    54  000000                     
+    55  000000                     
+    56  000000                     
+    57  000000                     
+    58  000000                     
+    59  000000                     
+    60  000000                     
+    61  000000                     
+    62  000000                     
+    63  000000                     
+    64  000000                     
+    65  000000                     
+    66  000000                     
+    67  000000                     
+    68  000000                     
+    69  000000                     
+    70  000000                     
+    71  000000                     
+    72  000000                     
+    73  000000                     
+    74  000000                     
+    75  000000                     
+    76  000000                     
+    77  000000                     
+    78  000000                     
+    79  000000                     
+    80  000000                     
+    81  000000                     
+    82  000000                     
+    83  000000                     
+    84  000000                     
+    85  000000                     
+    86  000000                     
+    87  000000                     
+    88  000000                     
+    89  000000                     
+    90  000000                     
+    91  000000                     
+    92  000000                     
+    93  000000                     
+    94  000000                     
+    95  000000                     
+    96  000000                     
+    97                           
+    98                           	psect	__Z15668RS_
+    99  007BB2                     
+   100  007BB2                     	;#
+   101                           
+   102                           	psect	text
+   103  007C66                     _main:
+   104  007C66  FFFF               	dw	65535
+   105  000000                     
+   106                           ;main.c: 34: boot_loader();
+   107  007C68  EC05  F038         	call	_boot_loader	;wreg free
+   108                           ;main.c: 35: }
+   109  007C6C  EF0C  F000         	goto	start
+   110                           
+   111                           	psect	config
+   112                           ;stdlib.h: 122: extern int atexit(void (*)(void)
+      +                          );
+   113                           ;stdlib.h: 126: extern void qsort(void *, size_t
+      +                          , size_t, int (*)(const void *, const void *));
+   114                           ;stdlib.h: 127: extern void * bsearch(const void
+      +                           *, void *, size_t, size_t, int(*)(const void *,
+      +                           const void *));
+ size_t, size_t, int(*)(const void *,
+      +                           const void *));
+300000                     	org	0	;#
+   116  300000                     config_word1:
+   117                           ;#
+   118  300000  FAFF               	dw	64255	;#
+  FAFF               	dw	64255	;#
+300002                     	org	2	;#
+   120  300002                     config_word2:
+   121                           ;#
+   122  300002  FEFC               	dw	65276	;#
+  FEFC               	dw	65276	;#
+300004                     	org	6	;#
+   124  300006                     config_word4:
+   125                           ;#
+   126  300006  FFFA               	dw	65530	;#
+  FFFA               	dw	65530	;#
+300008                     	org	8	;#
+   128  300008                     config_word5:
+   129                           ;#
+   130  300008  FFFF               	dw	65535	;#
+  FFFF               	dw	65535	;#
+
+30000A                     	org	10	;#
+   132  30000A                     config_word6:
+   133                           ;#
+   134  30000A  FFFF               	dw	65535	;#
+  FFFF               	dw	65535	;#
+30000C                     	org	12	;#
+   136  30000C                     config_word7:
+   137                           ;#
+   138  30000C  FFFF               	dw	65535	;#
+   139                           
+   140                           	psect	eeprom_data
+   141  F00000  01 02 03 04 05 06  	db	1,2,3,4,5,6,7,8	;#
+      +       07 08              
+
+
+HI-TECH Software PICC-18 Macro Assembler V8.35PL2
+Symbol Table                                           Fri Jan  7 08:58:07 2005
+
+       _main 7C66         start 0018  _boot_loader 700A  
+    __Lparam 050B      __ramtop 0600  config_word1 0000  
+config_word2 0002  config_word4 0006  config_word5 0008  
+config_word6 000A  config_word7 000C  

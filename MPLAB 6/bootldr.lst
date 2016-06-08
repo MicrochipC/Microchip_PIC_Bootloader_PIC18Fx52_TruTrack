@@ -1,0 +1,2487 @@
+
+
+HI-TECH Software PICC-18 Macro Assembler V8.35PL2
+Serial number: HCPIC18-15668                           Fri Jan  7 09:15:20 2005
+
+Licensed to: DESIGNREM LTD
+     1                           	processor	18F452
+     2                           	opt	pw 80
+     3                           	psect	__Z15668RS_,global,delta=1
+     4                           	psect	bootloader,global,reloc=2,class=CODE,delt
+      +                          a=1
+     5                           	psect	bigbss,global,class=BIGRAM,space=1,delta=
+      +                          1
+     6                           	psect	temp,global,ovrld,common,class=COMRAM,spa
+      +                          ce=1,delta=1
+     7                           	psect	intsave_regs,global,class=BIGRAM,space=1,
+      +                          delta=1
+     8  000000                     
+     9  000000                     
+    10  000000                     
+    11  000000                     
+    12  000000                     
+    13  000000                     
+    14  000000                     
+    15  000000                     
+    16  000000                     
+    17  000000                     
+    18  000000                     
+    19  000000                     
+    20  000000                     
+    21  000000                     
+    22  000000                     
+    23  000000                     
+    24  000000                     
+    25  000000                     
+    26  000000                     
+    27  000000                     
+    28  000000                     
+    29  000000                     
+    30  000000                     
+    31  000000                     
+    32  000000                     
+    33  000000                     
+    34  000000                     
+    35  000000                     
+    36  000000                     
+    37  000000                     
+    38  000000                     
+    39  000000                     
+    40  000000                     
+    41  000000                     
+    42  000000                     
+    43  000000                     
+    44  000000                     
+    45  000000                     
+    46  000000                     
+    47  000000                     
+    48  000000                     
+    49  000000                     
+    50  000000                     
+    51  000000                     
+    52  000000                     
+    53  000000                     
+    54  000000                     
+    55  000000                     
+    56  000000                     
+    57  000000                     
+    58  000000                     
+    59  000000                     
+    60  000000                     
+    61  000000                     
+    62  000000                     
+    63  000000                     
+    64  000000                     
+    65  000000                     
+    66  000000                     
+    67  000000                     
+    68  000000                     
+    69  000000                     
+    70  000000                     
+    71  000000                     
+    72  000000                     
+    73  000000                     
+    74  000000                     
+    75  000000                     
+    76  000000                     
+    77  000000                     
+    78  000000                     
+    79  000000                     
+    80  000000                     
+    81  000000                     
+    82  000000                     
+    83  000000                     
+    84  000000                     
+    85  000000                     
+    86  000000                     
+    87  000000                     
+    88  000000                     
+    89  000000                     
+    90  000000                     
+    91  000000                     
+    92  000000                     
+    93  000000                     
+    94  000000                     
+    95  000000                     
+    96  000000                     
+    97                           
+    98                           	psect	__Z15668RS_
+    99  007BB2                     
+   100  007BB2                     
+   101                           
+   102                           	psect	bootloader
+   103                           ;	pragma psect text=bootloader
+   104  007000                     _register_send:
+   105                           ;	_test assigned to ?a_send_reg+1
+   106  000000                     _send_reg$test	set	?a_send_reg+1
+   107                           ;	_txsta_tmp assigned to ?a_send_reg+0
+   108  000000                     _send_reg$txsta_tmp	set	?a_send_reg
+   109                           ;bootldr.c: 691: unsigned char
+   110                           ;bootldr.c: 692: read_config(unsigned long dest_
+      +                          addr)
+   111                           ;bootldr.c: 693: {
+   112                           ;       param _dest_addr assigned to ?_read_conf
+      +                          ig+0
+   113  000000                     _read_config$dest_addr	set	?_read_config
+   114                           ;bootldr.c: 666: void ldr_FLASH_ERASE(unsigned l
+      +                          ong addr)
+   115                           ;bootldr.c: 667: {
+   116                           ;       param _addr assigned to ?_ldr_FLASH_ERAS
+      +                          E+0
+   117  000000                     _ldr_FLASH_ERASE$addr	set	?_ldr_FLASH_ERASE
+   118                           ;bootldr.c: 659: void load_tbl_ptr(unsigned long
+      +                           addr)
+   119                           ;bootldr.c: 660: {
+   120                           ;       param _addr assigned to ?_load_tbl_ptr+0
+   121  000000                     _load_tbl_ptr$addr	set	?_load_tbl_ptr
+   122                           ;	_BUFFER assigned to ?a_ldr_flash_write+3
+   123  000000                     _ldr_flash_write$BUFFER	set	?a_ldr_flash_write+3
+   124                           ;	_counter assigned to ?a_ldr_flash_write+2
+   125  000000                     _ldr_flash_write$counter	set	?a_ldr_flash_write+
+      +                          2
+   126                           ;	_prebuffer_count assigned to ?a_ldr_flash_writ
+      +                          e+1
+   127  000000                     _ldr_flash_write$prebuffer_count	set	?a_ldr_flas
+      +                          h_write+1
+   128                           ;	_datalength assigned to ?a_ldr_flash_write+0
+   129  000000                     _ldr_flash_write$datalength	set	?a_ldr_flash_wri
+      +                          te
+   130                           ;       param _dest_addr assigned to ?_ldr_flash
+      +                          _write+3
+   131  000000                     _ldr_flash_write$dest_addr	set	?_ldr_flash_write
+      +                          +3
+   132                           ;       param _length assigned to ?_ldr_flash_wr
+      +                          ite+2
+   133  000000                     _ldr_flash_write$length	set	?_ldr_flash_write+2
+   134                           ;bootldr.c: 566: void ldr_flash_write(unsigned c
+      +                          har * read_addr,unsigned char length,unsigned lo
+      +                          ng dest_addr)
+   135                           ;bootldr.c: 567: {
+   136                           ;       param _read_addr assigned to ?_ldr_flash
+      +                          _write+0
+   137  000000                     _ldr_flash_write$read_addr	set	?_ldr_flash_write
+   138                           ;	_baud assigned to ?a_bootldr_init_serial+0
+   139  000000                     _bootldr_init_serial$baud	set	?a_bootldr_init_se
+      +                          rial
+   140                           ;       param _store assigned to ?_read_program+
+      +                          5
+   141  000000                     _read_program$store	set	?_read_program+5
+   142                           ;       param _length assigned to ?_read_program
+      +                          +4
+   143  000000                     _read_program$length	set	?_read_program+4
+   144                           ;bootldr.c: 426: void
+   145                           ;bootldr.c: 427: read_program(unsigned long loca
+      +                          tion,unsigned char length, unsigned char store[]
+      +                          )
+   146                           ;bootldr.c: 428: {
+   147                           ;       param _location assigned to ?_read_progr
+      +                          am+0
+   148  000000                     _read_program$location	set	?_read_program
+   149                           ;	_program_data assigned to ?a_boot_loader+14
+   150  000000                     _boot_loader$program_data	set	?a_boot_loader+14
+   151                           ;	_data_address assigned to ?a_boot_loader+10
+   152  000000                     _boot_loader$data_address	set	?a_boot_loader+10
+   153                           ;	_reset_vector_store assigned to ?a_boot_loader
+      +                          +6
+   154  000000                     _boot_loader$reset_vector_store	set	?a_boot_load
+      +                          er+6
+   155                           ;	_i assigned to ?a_boot_loader+5
+   156  000000                     _boot_loader$i	set	?a_boot_loader+5
+   157                           ;	_chksum assigned to ?a_boot_loader+4
+   158  000000                     _boot_loader$chksum	set	?a_boot_loader+4
+   159                           ;	_data_length assigned to ?a_boot_loader+3
+   160  000000                     _boot_loader$data_length	set	?a_boot_loader+3
+   161                           ;	_memory_type assigned to ?a_boot_loader+2
+   162  000000                     _boot_loader$memory_type	set	?a_boot_loader+2
+   163                           ;	_type assigned to ?a_boot_loader+1
+   164  000000                     _boot_loader$type	set	?a_boot_loader+1
+   165  007000  FFFF               	dw	65535
+   166  007002                     f4442:
+   167  000000                     
+   168                           ;bootldr.c: 88: asm("goto _send_reg");
+   169  007002  EF98  F03C         	goto	_send_reg	;#
+   170                           ;bootldr.c: 89: }
+   171  007006  FFFF               	dw	65535
+   172  007008  D7FC               	goto	f4442
+   173  00700A                     _boot_loader:
+   174  00700A  FFFF               	dw	65535
+   175  00700C                     f4452:
+   176  000000                     
+   177                           ;	_char_in assigned to ?a_boot_loader+0
+   178  000000                     _boot_loader$char_in	set	?a_boot_loader
+   179                           ;bootldr.c: 95: unsigned char reset_vector_store
+      +                          [4];
+   180  00700C  9EF2               	bcf	intcon,7,c
+   181                           ;bootldr.c: 105: SWDTEN = 0;
+   182  00700E  90D1               	bcf	4049,0,c
+   183                           ;bootldr.c: 106: TRISC6 = 0;
+   184  007010  9C94               	bcf	3988,6,c	;volatile
+   185                           ;bootldr.c: 107: RC6 = 1;
+   186  007012  8C82               	bsf	3970,6,c	;volatile
+   187                           ;bootldr.c: 108: TRISC7 = 1;
+   188  007014  8E94               	bsf	3988,7,c	;volatile
+   189                           ;bootldr.c: 117: for (data_address = 0;data_addr
+      +                          ess < 40000; data_address++)
+   190  007016  0105               	movlb	__Lparam shr (0+8)
+   191  007018  6B15               	clrf	(?a_boot_loader+10)^(__Lparam& (0+65280))
+   192  00701A  6B16               	clrf	(?a_boot_loader+11)^(__Lparam& (0+65280))
+   193  00701C  6B17               	clrf	(?a_boot_loader+12)^(__Lparam& (0+65280))
+   194  00701E  6B18               	clrf	(?a_boot_loader+13)^(__Lparam& (0+65280))
+   195  007020  0E00               	movlw	0
+   196  007022  5D18               	subwf	(?a_boot_loader+13)^(__Lparam& (0+65280))
+      +                          ,w
+   197  007024  E108               	bnz	u15
+   198  007026  0E00               	movlw	0
+   199  007028  5D17               	subwf	(?a_boot_loader+12)^(__Lparam& (0+65280))
+      +                          ,w
+   200  00702A  E105               	bnz	u15
+   201  00702C  0E9C               	movlw	156
+   202  00702E  5D16               	subwf	(?a_boot_loader+11)^(__Lparam& (0+65280))
+      +                          ,w
+   203  007030  E102               	bnz	u15
+   204  007032  0E40               	movlw	64
+   205  007034  5D15               	subwf	(?a_boot_loader+10)^(__Lparam& (0+65280))
+      +                          ,w
+   206  007036                     u15:
+   207  007036  B0D8               	btfsc	status,0,c
+   208  007038  D013               	goto	l4
+   209                           ;bootldr.c: 118: {
+   210                           ;bootldr.c: 119: asm("NOP");
+   211  00703A  F000               	nop		;#
+   212                           ;bootldr.c: 120: asm("NOP");
+   213  00703C  F000               	nop		;#
+   214                           ;bootldr.c: 121: }
+   215  00703E  0105               	movlb	__Lparam shr (0+8)
+   216  007040  2B15               	incf	(?a_boot_loader+10)^(__Lparam& (0+65280)),
+      +                          f
+   217  007042  0E00               	movlw	0
+   218  007044  2316               	addwfc	(?a_boot_loader+11)^(__Lparam& (0+65280)
+      +                          ),f
+   219  007046  2317               	addwfc	(?a_boot_loader+12)^(__Lparam& (0+65280)
+      +                          ),f
+   220  007048  2318               	addwfc	(?a_boot_loader+13)^(__Lparam& (0+65280)
+      +                          ),f
+   221  00704A  5D18               	subwf	(?a_boot_loader+13)^(__Lparam& (0+65280))
+      +                          ,w
+   222  00704C  E108               	bnz	u25
+   223  00704E  0E00               	movlw	0
+   224  007050  5D17               	subwf	(?a_boot_loader+12)^(__Lparam& (0+65280))
+      +                          ,w
+   225  007052  E105               	bnz	u25
+   226  007054  0E9C               	movlw	156
+   227  007056  5D16               	subwf	(?a_boot_loader+11)^(__Lparam& (0+65280))
+      +                          ,w
+   228  007058  E102               	bnz	u25
+   229  00705A  0E40               	movlw	64
+   230  00705C  5D15               	subwf	(?a_boot_loader+10)^(__Lparam& (0+65280))
+      +                          ,w
+   231  00705E                     u25:
+   232  00705E  D7EB               	goto	u15
+   233  007060                     l4:
+   234                           ;bootldr.c: 123: bootldr_init_serial(4);
+   235  007060  0E04               	movlw	4
+   236  007062  DB28               	call	_bootldr_init_serial
+   237                           ;bootldr.c: 124: INT0IE = 0;
+   238  007064  98F2               	bcf	intcon,4,c
+   239                           ;bootldr.c: 125: INT1IE = 0;
+   240  007066  96F0               	bcf	intcon3,3,c
+   241                           ;bootldr.c: 126: INT2IE = 0;
+   242  007068  98F0               	bcf	intcon3,4,c
+   243                           ;bootldr.c: 127: RBIE = 0;
+   244  00706A  96F2               	bcf	intcon,3,c
+   245                           ;bootldr.c: 128: TMR0IE = 0;
+   246  00706C  9AF2               	bcf	intcon,5,c
+   247                           ;bootldr.c: 129: PEIE = 0;
+   248  00706E  9CF2               	bcf	intcon,6,c
+   249                           ;bootldr.c: 130: ADIE = 0;
+   250  007070  9C9D               	bcf	3997,6,c
+   251                           ;bootldr.c: 134: bootldr_putch('B');
+   252  007072  0E42               	movlw	66
+   253  007074  DAEC               	call	_bootldr_putch
+   254                           ;bootldr.c: 135: bootldr_putch('O');
+   255  007076  0E4F               	movlw	79
+   256  007078  DAEA               	call	_bootldr_putch
+   257                           ;bootldr.c: 136: bootldr_putch('O');
+   258  00707A  0E4F               	movlw	79
+   259  00707C  DAE8               	call	_bootldr_putch
+   260                           ;bootldr.c: 137: bootldr_putch('T');
+   261  00707E  0E54               	movlw	84
+   262  007080  DAE6               	call	_bootldr_putch
+   263                           ;bootldr.c: 145: while(1==1)
+   264  007082                     l7:
+   265                           ;bootldr.c: 146: {
+   266  007082  DAC3               	call	_bootldr_getch	;wreg free
+   267  007084  0105               	movlb	__Lparam shr (0+8)
+   268  007086  6F0B               	movwf	?a_boot_loader^(__Lparam& (0+65280))
+   269                           ;bootldr.c: 148: switch (char_in)
+   270  007088  D298               	goto	l10
+   271  00708A                     l11:
+   272                           ;bootldr.c: 149: {
+   273                           ;bootldr.c: 151: {
+   274  00708A  0E78               	movlw	120
+   275  00708C  DAE0               	call	_bootldr_putch
+   276                           ;bootldr.c: 153: while ((TRMT != 1) || (TXIF != 
+      +                          1))
+   277  00708E                     l12:
+   278                           ;bootldr.c: 154: {
+   279  00708E  B2AC               	btfsc	4012,1,c	;volatile
+   280  007090  A89E               	btfss	3998,4,c	;volatile
+   281  007092  D7FD               	goto	l12
+   282                           ;bootldr.c: 156: break;
+   283  007094  D7F6               	goto	l7
+   284  007096                     l15:
+   285                           ;bootldr.c: 157: }
+   286                           ;bootldr.c: 159: {
+   287  007096  DFB4               	call	_register_send	;#
+   288  007098                     l16:
+   289                           ;bootldr.c: 161: }
+   290                           ;bootldr.c: 163: {
+   291  007098  0E76               	movlw	118
+   292  00709A  DAD9               	call	_bootldr_putch
+   293                           ;bootldr.c: 165: bootldr_putch(11);
+   294  00709C  0E0B               	movlw	11
+   295  00709E  DAD7               	call	_bootldr_putch
+   296                           ;bootldr.c: 166: while ((TRMT != 1) || (TXIF != 
+      +                          1))
+   297  0070A0                     l17:
+   298                           ;bootldr.c: 167: {
+   299  0070A0  B2AC               	btfsc	4012,1,c	;volatile
+   300  0070A2  A89E               	btfss	3998,4,c	;volatile
+   301  0070A4  D7FD               	goto	l17
+   302                           ;bootldr.c: 169: break;
+   303  0070A6  D7ED               	goto	l7
+   304  0070A8                     l20:
+   305                           ;bootldr.c: 170: }
+   306                           ;bootldr.c: 172: {
+   307  0070A8  0E72               	movlw	114
+   308  0070AA  DAD1               	call	_bootldr_putch
+   309                           ;bootldr.c: 174: while ((TRMT != 1) || (TXIF != 
+      +                          1))
+   310  0070AC                     l21:
+   311                           ;bootldr.c: 175: {
+   312  0070AC  B2AC               	btfsc	4012,1,c	;volatile
+   313  0070AE  A89E               	btfss	3998,4,c	;volatile
+   314  0070B0  D7FD               	goto	l21
+   315                           ;bootldr.c: 177: read_program((unsigned long)app
+      +                          lication_jump,4,&test[0]);
+   316  0070B2  0EA8               	movlw	low _application_jump
+   317  0070B4  0105               	movlb	__Lparam shr (0+8)
+   318  0070B6  6F39               	movwf	?_read_program^(__Lparam& (0+65280))
+   319  0070B8  0E7B               	movlw	high _application_jump
+   320  0070BA  6F3A               	movwf	(?_read_program^(__Lparam& (0+65280))+1)
+   321  0070BC  6B3B               	clrf	(?_read_program+2)^(__Lparam& (0+65280))
+   322  0070BE  6B3C               	clrf	(?_read_program+3)^(__Lparam& (0+65280))
+   323  0070C0  0E04               	movlw	4
+   324  0070C2  6F3D               	movwf	(?_read_program+4)^(__Lparam& (0+65280))
+   325  0070C4  0E01               	movlw	low F854
+   326  0070C6  6F3E               	movwf	(?_read_program+5)^(__Lparam& (0+65280))
+   327  0070C8  0E05               	movlw	high F854
+   328  0070CA  6F3F               	movwf	(?_read_program+6)^(__Lparam& (0+65280))
+   329  0070CC  DAC8               	call	_read_program	;wreg free
+   330  0070CE                     L1:
+   331                           ;bootldr.c: 178: if (test[1] == 0xEF)
+   332  0070CE  C502  FFE8         	movff	F854+1,wreg
+   333  0070D2  0AEF               	xorlw	-17
+   334  0070D4  A4D8               	btfss	status,2,c
+   335  0070D6  D7D5               	goto	l7
+   336  0070D8  EFCD  F03D         	goto	u800
+   337                           ;bootldr.c: 179: {
+   338                           ;bootldr.c: 181: asm("goto _application_jump");
+   339                           ;bootldr.c: 182: }
+   340  0070DC                     l26:
+   341                           ;bootldr.c: 186: case 'E':
+   342                           ;bootldr.c: 187: {
+   343  0070DC  0EA8               	movlw	low _application_jump
+   344  0070DE  0105               	movlb	__Lparam shr (0+8)
+   345  0070E0  6F39               	movwf	?_read_program^(__Lparam& (0+65280))
+   346  0070E2  0E7B               	movlw	high _application_jump
+   347  0070E4  6F3A               	movwf	(?_read_program^(__Lparam& (0+65280))+1)
+   348  0070E6  6B3B               	clrf	(?_read_program+2)^(__Lparam& (0+65280))
+   349  0070E8  6B3C               	clrf	(?_read_program+3)^(__Lparam& (0+65280))
+   350  0070EA  0E04               	movlw	4
+   351  0070EC  6F3D               	movwf	(?_read_program+4)^(__Lparam& (0+65280))
+   352  0070EE  0E01               	movlw	low F854
+   353  0070F0  6F3E               	movwf	(?_read_program+5)^(__Lparam& (0+65280))
+   354  0070F2  0E05               	movlw	high F854
+   355  0070F4  6F3F               	movwf	(?_read_program+6)^(__Lparam& (0+65280))
+   356  0070F6  DAB3               	call	_read_program	;wreg free
+   357  0070F8  D7EA               	goto	L1
+   358                           ;bootldr.c: 189: if (test[1] == 0xEF)
+   359                           ;bootldr.c: 190: {
+   360                           ;bootldr.c: 192: asm("goto _application_jump");
+   361                           ;bootldr.c: 193: }
+   362  0070FA                     l28:
+   363                           ;bootldr.c: 195: }
+   364                           ;bootldr.c: 197: {
+   365  0070FA  0E70               	movlw	112
+   366  0070FC  DAA8               	call	_bootldr_putch
+   367                           ;bootldr.c: 199: break;
+   368  0070FE  D7C1               	goto	l7
+   369  007100                     l29:
+   370                           ;bootldr.c: 200: }
+   371                           ;bootldr.c: 202: {
+   372  007100  0E62               	movlw	98
+   373  007102  DAA5               	call	_bootldr_putch
+   374                           ;bootldr.c: 208: break;
+   375  007104  D7BE               	goto	l7
+   376  007106                     l31:
+   377                           ;bootldr.c: 211: case 'S':
+   378                           ;bootldr.c: 212: {
+   379  007106  0105               	movlb	__Lparam shr (0+8)
+   380  007108  6B0F               	clrf	(?a_boot_loader+4)^(__Lparam& (0+65280))
+   381                           ;bootldr.c: 214: data_address = bootldr_getch();
+   382  00710A  DA7F               	call	_bootldr_getch	;wreg free
+   383  00710C  0105               	movlb	__Lparam shr (0+8)
+   384  00710E  6F15               	movwf	(?a_boot_loader+10)^(__Lparam& (0+65280))
+   385  007110  6B16               	clrf	(?a_boot_loader+11)^(__Lparam& (0+65280))
+   386  007112  6B17               	clrf	(?a_boot_loader+12)^(__Lparam& (0+65280))
+   387  007114  6B18               	clrf	(?a_boot_loader+13)^(__Lparam& (0+65280))
+   388                           ;bootldr.c: 215: chksum += data_address;
+   389  007116  5115               	movf	(?a_boot_loader+10)^(__Lparam& (0+65280)),
+      +                          w
+   390  007118  270F               	addwf	(?a_boot_loader+4)^(__Lparam& (0+65280)),
+      +                          f
+   391                           ;bootldr.c: 216: i = bootldr_getch();
+   392  00711A  DA77               	call	_bootldr_getch	;wreg free
+   393  00711C  0105               	movlb	__Lparam shr (0+8)
+   394  00711E  6F10               	movwf	(?a_boot_loader+5)^(__Lparam& (0+65280))
+   395                           ;bootldr.c: 217: chksum += i;
+   396  007120  5110               	movf	(?a_boot_loader+5)^(__Lparam& (0+65280)),w
+   397  007122  270F               	addwf	(?a_boot_loader+4)^(__Lparam& (0+65280)),
+      +                          f
+   398                           ;bootldr.c: 218: data_address += i*256;
+   399  007124  5110               	movf	(?a_boot_loader+5)^(__Lparam& (0+65280)),w
+   400  007126  6E01               	movwf	btemp+1
+   401  007128  6A00               	clrf	btemp
+   402  00712A  0E00               	movlw	0
+   403  00712C  BE01               	btfsc	btemp+1,7
+   404  00712E  0EFF               	movlw	255
+   405  007130  6E02               	movwf	btemp+2
+   406  007132  6E03               	movwf	btemp+3
+   407  007134  5000               	movf	btemp,w
+   408  007136  2715               	addwf	(?a_boot_loader+10)^(__Lparam& (0+65280))
+      +                          ,f
+   409  007138  5001               	movf	btemp+1,w
+   410  00713A  2316               	addwfc	(?a_boot_loader+11)^(__Lparam& (0+65280)
+      +                          ),f
+   411  00713C  5002               	movf	btemp+2,w
+   412  00713E  2317               	addwfc	(?a_boot_loader+12)^(__Lparam& (0+65280)
+      +                          ),f
+   413  007140  5003               	movf	btemp+3,w
+   414  007142  2318               	addwfc	(?a_boot_loader+13)^(__Lparam& (0+65280)
+      +                          ),f
+   415                           ;bootldr.c: 219: i = bootldr_getch();
+   416  007144  DA62               	call	_bootldr_getch	;wreg free
+   417  007146  0105               	movlb	__Lparam shr (0+8)
+   418  007148  6F10               	movwf	(?a_boot_loader+5)^(__Lparam& (0+65280))
+   419                           ;bootldr.c: 220: if (chksum == (0xFF - i))
+   420  00714A  6800               	setf	btemp
+   421  00714C  6A01               	clrf	btemp+1
+   422  00714E  5110               	movf	(?a_boot_loader+5)^(__Lparam& (0+65280)),w
+   423  007150  5E00               	subwf	btemp,f
+   424  007152  0E00               	movlw	0
+   425  007154  5A01               	subwfb	btemp+1,f
+   426  007156  C50F  FFE8         	movff	?a_boot_loader+4,wreg
+   427  00715A  1800               	xorwf	btemp,w
+   428  00715C  E101               	bnz	u145
+   429  00715E  5201               	movf	btemp+1,f
+   430  007160                     u145:
+   431  007160  A4D8               	btfss	status,2,c
+   432  007162  D026               	goto	l32
+   433                           ;bootldr.c: 221: {
+   434  007164  0EEF               	movlw	239
+   435  007166  6F12               	movwf	(?a_boot_loader+7)^(__Lparam& (0+65280))
+   436                           ;bootldr.c: 223: data_address = ((long)boot_load
+      +                          er)>>1;
+   437  007168  0E0A               	movlw	low _boot_loader
+   438  00716A  6E00               	movwf	btemp
+   439  00716C  0E70               	movlw	high _boot_loader
+   440  00716E  6E01               	movwf	btemp+1
+   441  007170  90D8               	bcf	status,0,c
+   442  007172  3001               	rrcf	btemp+1,w
+   443  007174  6E03               	movwf	btemp+3
+   444  007176  3000               	rrcf	btemp,w
+   445  007178  6E02               	movwf	btemp+2
+   446  00717A  5002               	movf	btemp+2,w
+   447  00717C  6F15               	movwf	(?a_boot_loader+10)^(__Lparam& (0+65280))
+   448  00717E  5003               	movf	btemp+3,w
+   449  007180  6F16               	movwf	((?a_boot_loader+10)^(__Lparam& (0+65280)
+      +                          )+1)
+   450  007182  6B17               	clrf	(?a_boot_loader+12)^(__Lparam& (0+65280))
+   451  007184  6B18               	clrf	(?a_boot_loader+13)^(__Lparam& (0+65280))
+   452                           ;bootldr.c: 224: reset_vector_store[0] = data_ad
+      +                          dress;
+   453  007186  5115               	movf	(?a_boot_loader+10)^(__Lparam& (0+65280)),
+      +                          w
+   454  007188  6F11               	movwf	(?a_boot_loader+6)^(__Lparam& (0+65280))
+   455                           ;bootldr.c: 225: reset_vector_store[3] = 0xF0;
+   456  00718A  0EF0               	movlw	240
+   457  00718C  6F14               	movwf	(?a_boot_loader+9)^(__Lparam& (0+65280))
+   458                           ;bootldr.c: 226: reset_vector_store[2] = *(((cha
+      +                          r *)&data_address)+1);
+   459  00718E  5116               	movf	(?a_boot_loader+11)^(__Lparam& (0+65280)),
+      +                          w
+   460  007190  6F13               	movwf	(?a_boot_loader+8)^(__Lparam& (0+65280))
+   461                           ;bootldr.c: 227: memory_type = 0;
+   462  007192  6B0D               	clrf	(?a_boot_loader+2)^(__Lparam& (0+65280))
+   463                           ;bootldr.c: 228: CFGS = 0;
+   464  007194  9CA6               	bcf	4006,6,c
+   465                           ;bootldr.c: 229: ldr_flash_write(&reset_vector_s
+      +                          tore[0],4,0);
+   466  007196  0E11               	movlw	low (?a_boot_loader+6)
+   467  007198  6F39               	movwf	?_ldr_flash_write^(__Lparam& (0+65280))
+   468  00719A  0E05               	movlw	high (?a_boot_loader+6)
+   469  00719C  6F3A               	movwf	(?_ldr_flash_write+1)^(__Lparam& (0+65280
+      +                          ))
+   470  00719E  0E04               	movlw	4
+   471  0071A0  6F3B               	movwf	(?_ldr_flash_write+2)^(__Lparam& (0+65280
+      +                          ))
+   472  0071A2  6B3C               	clrf	(?_ldr_flash_write+3)^(__Lparam& (0+65280)
+      +                          )
+   473  0071A4  6B3D               	clrf	(?_ldr_flash_write+4)^(__Lparam& (0+65280)
+      +                          )
+   474  0071A6  6B3E               	clrf	(?_ldr_flash_write+5)^(__Lparam& (0+65280)
+      +                          )
+   475  0071A8  6B3F               	clrf	(?_ldr_flash_write+6)^(__Lparam& (0+65280)
+      +                          )
+   476  0071AA  DAAA               	call	_ldr_flash_write	;wreg free
+   477                           ;bootldr.c: 230: bootldr_putch('f');
+   478  0071AC  0E66               	movlw	102
+   479  0071AE  DA4F               	call	_bootldr_putch
+   480  0071B0                     l32:
+   481                           ;bootldr.c: 231: }
+   482  0071B0  0105               	movlb	__Lparam shr (0+8)
+   483  0071B2  510B               	movf	?a_boot_loader^(__Lparam& (0+65280)),w
+   484  0071B4  0A54               	xorlw	84
+   485  0071B6  A4D8               	btfss	status,2,c
+   486  0071B8  D764               	goto	l7
+   487                           ;bootldr.c: 233: {
+   488  0071BA                     l34:
+   489                           ;bootldr.c: 235: {
+   490  0071BA  B2AC               	btfsc	4012,1,c	;volatile
+   491  0071BC  A89E               	btfss	3998,4,c	;volatile
+   492  0071BE  D7FD               	goto	l34
+   493                           ;bootldr.c: 237: bootldr_init_serial(7);
+   494  0071C0  0E07               	movlw	7
+   495  0071C2  DA78               	call	_bootldr_init_serial
+   496                           ;bootldr.c: 238: }
+   497  0071C4  D75E               	goto	l7
+   498  0071C6                     l37:
+   499                           ;bootldr.c: 240: }
+   500                           ;bootldr.c: 242: {
+   501  0071C6  0105               	movlb	__Lparam shr (0+8)
+   502  0071C8  6B0F               	clrf	(?a_boot_loader+4)^(__Lparam& (0+65280))
+   503                           ;bootldr.c: 244: data_length = bootldr_getch();
+   504  0071CA  DA1F               	call	_bootldr_getch	;wreg free
+   505  0071CC  0105               	movlb	__Lparam shr (0+8)
+   506  0071CE  6F0E               	movwf	(?a_boot_loader+3)^(__Lparam& (0+65280))
+   507                           ;bootldr.c: 245: chksum += data_length;
+   508  0071D0  510E               	movf	(?a_boot_loader+3)^(__Lparam& (0+65280)),w
+   509  0071D2  270F               	addwf	(?a_boot_loader+4)^(__Lparam& (0+65280)),
+      +                          f
+   510                           ;bootldr.c: 246: data_address = bootldr_getch();
+   511  0071D4  DA1A               	call	_bootldr_getch	;wreg free
+   512  0071D6  0105               	movlb	__Lparam shr (0+8)
+   513  0071D8  6F15               	movwf	(?a_boot_loader+10)^(__Lparam& (0+65280))
+   514  0071DA  6B16               	clrf	(?a_boot_loader+11)^(__Lparam& (0+65280))
+   515  0071DC  6B17               	clrf	(?a_boot_loader+12)^(__Lparam& (0+65280))
+   516  0071DE  6B18               	clrf	(?a_boot_loader+13)^(__Lparam& (0+65280))
+   517                           ;bootldr.c: 247: chksum += data_address;
+   518  0071E0  5115               	movf	(?a_boot_loader+10)^(__Lparam& (0+65280)),
+      +                          w
+   519  0071E2  270F               	addwf	(?a_boot_loader+4)^(__Lparam& (0+65280)),
+      +                          f
+   520                           ;bootldr.c: 248: i = bootldr_getch();
+   521  0071E4  DA12               	call	_bootldr_getch	;wreg free
+   522  0071E6  0105               	movlb	__Lparam shr (0+8)
+   523  0071E8  6F10               	movwf	(?a_boot_loader+5)^(__Lparam& (0+65280))
+   524                           ;bootldr.c: 249: chksum += i;
+   525  0071EA  5110               	movf	(?a_boot_loader+5)^(__Lparam& (0+65280)),w
+   526  0071EC  270F               	addwf	(?a_boot_loader+4)^(__Lparam& (0+65280)),
+      +                          f
+   527                           ;bootldr.c: 250: data_address = (data_address*25
+      +                          6)+i;
+   528  0071EE  0E08               	movlw	8
+   529  0071F0  C515  F000         	movff	?a_boot_loader+10,btemp
+   530  0071F4  C516  F001         	movff	?a_boot_loader+11,btemp+1
+   531  0071F8  C517  F002         	movff	?a_boot_loader+12,btemp+2
+   532  0071FC  C518  F003         	movff	?a_boot_loader+13,btemp+3
+   533  007200  EC0C  F03E         	call	llsll
+   534  007204  5110               	movf	(?a_boot_loader+5)^(__Lparam& (0+65280)),w
+   535  007206  2400               	addwf	btemp,w
+   536  007208  6F15               	movwf	(?a_boot_loader+10)^(__Lparam& (0+65280))
+   537  00720A  0E00               	movlw	0
+   538  00720C  2001               	addwfc	btemp+1,w
+   539  00720E  6F16               	movwf	((?a_boot_loader+10)^(__Lparam& (0+65280)
+      +                          )+1)
+   540  007210  0E00               	movlw	0
+   541  007212  2002               	addwfc	btemp+2,w
+   542  007214  6F17               	movwf	((?a_boot_loader+10)^(__Lparam& (0+65280)
+      +                          )+2)
+   543  007216  0E00               	movlw	0
+   544  007218  2003               	addwfc	btemp+3,w
+   545  00721A  6F18               	movwf	((?a_boot_loader+10)^(__Lparam& (0+65280)
+      +                          )+3)
+   546                           ;bootldr.c: 251: type = bootldr_getch();
+   547  00721C  D9F6               	call	_bootldr_getch	;wreg free
+   548  00721E  0105               	movlb	__Lparam shr (0+8)
+   549  007220  6F0C               	movwf	(?a_boot_loader+1)^(__Lparam& (0+65280))
+   550                           ;bootldr.c: 252: chksum += type;
+   551  007222  510C               	movf	(?a_boot_loader+1)^(__Lparam& (0+65280)),w
+   552  007224  270F               	addwf	(?a_boot_loader+4)^(__Lparam& (0+65280)),
+      +                          f
+   553                           ;bootldr.c: 253: for (i=0;i<data_length;i++)
+   554  007226  6B10               	clrf	(?a_boot_loader+5)^(__Lparam& (0+65280))
+   555  007228                     l41:
+   556  007228  0105               	movlb	__Lparam shr (0+8)
+   557  00722A  510E               	movf	(?a_boot_loader+3)^(__Lparam& (0+65280)),w
+   558  00722C  5D10               	subwf	(?a_boot_loader+5)^(__Lparam& (0+65280)),
+      +                          w
+   559  00722E  B0D8               	btfsc	status,0,c
+   560  007230  D015               	goto	u190
+   561                           ;bootldr.c: 254: {
+   562                           ;bootldr.c: 255: program_data[i] = bootldr_getch
+      +                          ();
+   563  007232  D9EB               	call	_bootldr_getch	;wreg free
+   564  007234  6E00               	movwf	btemp
+   565  007236  0105               	movlb	__Lparam shr (0+8)
+   566  007238  5110               	movf	(?a_boot_loader+5)^(__Lparam& (0+65280)),w
+   567  00723A  EE05  F019         	lfsr	0,?a_boot_loader+14
+   568  00723E  26E9               	addwf	fsr0l,f,c
+   569  007240  0E00               	movlw	0
+   570  007242  22EA               	addwfc	fsr0h,f,c
+   571  007244  C000  FFEF         	movff	btemp,indf0
+   572                           ;bootldr.c: 256: chksum += program_data[i];
+   573  007248  5110               	movf	(?a_boot_loader+5)^(__Lparam& (0+65280)),w
+   574  00724A  EE05  F019         	lfsr	0,?a_boot_loader+14
+   575  00724E  26E9               	addwf	fsr0l,f,c
+   576  007250  0E00               	movlw	0
+   577  007252  22EA               	addwfc	fsr0h,f,c
+   578  007254  50EF               	movf	indf0,w,c
+   579  007256  270F               	addwf	(?a_boot_loader+4)^(__Lparam& (0+65280)),
+      +                          f
+   580                           ;bootldr.c: 257: }
+   581  007258  2B10               	incf	(?a_boot_loader+5)^(__Lparam& (0+65280)),f
+   582  00725A  D7E6               	goto	l41
+   583  00725C                     u190:
+   584                           ;bootldr.c: 258: if ((unsigned char)(chksum + bo
+      +                          otldr_getch()) == 0)
+   585  00725C  D9D6               	call	_bootldr_getch	;wreg free
+   586  00725E  6E00               	movwf	btemp
+   587  007260  0105               	movlb	__Lparam shr (0+8)
+   588  007262  510F               	movf	(?a_boot_loader+4)^(__Lparam& (0+65280)),w
+   589  007264  2400               	addwf	btemp,w
+   590  007266  A4D8               	btfss	status,2,c
+   591  007268  D70C               	goto	l7
+   592                           ;bootldr.c: 259: {
+   593  00726A  510C               	movf	(?a_boot_loader+1)^(__Lparam& (0+65280)),w
+   594  00726C  A4D8               	btfss	status,2,c
+   595  00726E  D169               	goto	l43
+   596                           ;bootldr.c: 261: {
+   597  007270  510D               	movf	(?a_boot_loader+2)^(__Lparam& (0+65280)),w
+   598  007272  A4D8               	btfss	status,2,c
+   599  007274  D058               	goto	l44
+   600                           ;bootldr.c: 263: {
+   601  007276  0E00               	movlw	0
+   602  007278  5D18               	subwf	(?a_boot_loader+13)^(__Lparam& (0+65280))
+      +                          ,w
+   603  00727A  E108               	bnz	u235
+   604  00727C  0E00               	movlw	0
+   605  00727E  5D17               	subwf	(?a_boot_loader+12)^(__Lparam& (0+65280))
+      +                          ,w
+   606  007280  E105               	bnz	u235
+   607  007282  0E70               	movlw	112
+   608  007284  5D16               	subwf	(?a_boot_loader+11)^(__Lparam& (0+65280))
+      +                          ,w
+   609  007286  E102               	bnz	u235
+   610  007288  0E00               	movlw	0
+   611  00728A  5D15               	subwf	(?a_boot_loader+10)^(__Lparam& (0+65280))
+      +                          ,w
+   612  00728C                     u235:
+   613  00728C  B0D8               	btfsc	status,0,c
+   614  00728E  D048               	goto	l45
+   615                           ;bootldr.c: 265: {
+   616  007290  5118               	movf	(?a_boot_loader+13)^(__Lparam& (0+65280)),
+      +                          w
+   617  007292  1115               	iorwf	(?a_boot_loader+10)^(__Lparam& (0+65280))
+      +                          ,w
+   618  007294  1116               	iorwf	(?a_boot_loader+11)^(__Lparam& (0+65280))
+      +                          ,w
+   619  007296  1117               	iorwf	(?a_boot_loader+12)^(__Lparam& (0+65280))
+      +                          ,w
+   620  007298  A4D8               	btfss	status,2,c
+   621  00729A  D02F               	goto	l46
+   622                           ;bootldr.c: 267: {
+   623  00729C  6AD9               	clrf	fsr2l,c
+   624  00729E                     l47:
+   625                           ;bootldr.c: 269: {
+   626                           ;bootldr.c: 270: reset_vector_store[i] = program
+      +                          _data[i];
+   627  00729E  50D9               	movf	fsr2l,w,c
+   628  0072A0  EE15  F019         	lfsr	1,?a_boot_loader+14
+   629  0072A4  26E1               	addwf	fsr1l,f,c
+   630  0072A6  0E00               	movlw	0
+   631  0072A8  22E2               	addwfc	fsr1h,f,c
+   632  0072AA  50D9               	movf	fsr2l,w,c
+   633  0072AC  EE05  F011         	lfsr	0,?a_boot_loader+6
+   634  0072B0  26E9               	addwf	fsr0l,f,c
+   635  0072B2  0E00               	movlw	0
+   636  0072B4  22EA               	addwfc	fsr0h,f,c
+   637  0072B6  CFE7 FFEF          	movff	indf1,indf0
+   638                           ;bootldr.c: 271: }
+   639  0072BA  2AD9               	incf	fsr2l,f,c
+   640  0072BC  0E03               	movlw	3
+   641  0072BE  64D9               	cpfsgt	fsr2l,c
+   642  0072C0  D7EE               	goto	l47
+   643                           ;bootldr.c: 272: data_length -= 4;
+   644  0072C2  0EFC               	movlw	252
+   645  0072C4  0105               	movlb	__Lparam shr (0+8)
+   646  0072C6  270E               	addwf	(?a_boot_loader+3)^(__Lparam& (0+65280)),
+      +                          f
+   647                           ;bootldr.c: 273: data_address += 4;
+   648  0072C8  0E04               	movlw	4
+   649  0072CA  2715               	addwf	(?a_boot_loader+10)^(__Lparam& (0+65280))
+      +                          ,f
+   650  0072CC  0E00               	movlw	0
+   651  0072CE  2316               	addwfc	(?a_boot_loader+11)^(__Lparam& (0+65280)
+      +                          ),f
+   652  0072D0  2317               	addwfc	(?a_boot_loader+12)^(__Lparam& (0+65280)
+      +                          ),f
+   653  0072D2  2318               	addwfc	(?a_boot_loader+13)^(__Lparam& (0+65280)
+      +                          ),f
+   654                           ;bootldr.c: 274: if (data_length > 0)
+   655  0072D4  510E               	movf	(?a_boot_loader+3)^(__Lparam& (0+65280)),w
+   656  0072D6  B4D8               	btfsc	status,2,c
+   657  0072D8  D023               	goto	l45
+   658                           ;bootldr.c: 275: {
+   659  0072DA  0E1D               	movlw	low (?a_boot_loader+18)
+   660  0072DC  6F39               	movwf	?_ldr_flash_write^(__Lparam& (0+65280))
+   661  0072DE  0E05               	movlw	high (?a_boot_loader+18)
+   662  0072E0  6F3A               	movwf	(?_ldr_flash_write+1)^(__Lparam& (0+65280
+      +                          ))
+   663  0072E2  510E               	movf	(?a_boot_loader+3)^(__Lparam& (0+65280)),w
+   664  0072E4  6F3B               	movwf	(?_ldr_flash_write+2)^(__Lparam& (0+65280
+      +                          ))
+   665  0072E6  C515  F53C         	movff	?a_boot_loader+10,?_ldr_flash_write+3
+   666  0072EA  C516  F53D         	movff	?a_boot_loader+11,?_ldr_flash_write+4
+   667  0072EE  C517  F53E         	movff	?a_boot_loader+12,?_ldr_flash_write+5
+   668  0072F2  C518  F53F         	movff	?a_boot_loader+13,?_ldr_flash_write+6
+   669  0072F6  DA04               	call	_ldr_flash_write	;wreg free
+   670                           ;bootldr.c: 277: }
+   671                           ;bootldr.c: 279: else
+   672  0072F8  D013               	goto	l45
+   673  0072FA                     l46:
+   674                           ;bootldr.c: 280: {
+   675  0072FA  0105               	movlb	__Lparam shr (0+8)
+   676  0072FC  510E               	movf	(?a_boot_loader+3)^(__Lparam& (0+65280)),w
+   677  0072FE  B4D8               	btfsc	status,2,c
+   678  007300  D00F               	goto	l45
+   679                           ;bootldr.c: 282: {
+   680  007302  0E19               	movlw	low (?a_boot_loader+14)
+   681  007304  6F39               	movwf	?_ldr_flash_write^(__Lparam& (0+65280))
+   682  007306  0E05               	movlw	high (?a_boot_loader+14)
+   683  007308  6F3A               	movwf	(?_ldr_flash_write+1)^(__Lparam& (0+65280
+      +                          ))
+   684  00730A  510E               	movf	(?a_boot_loader+3)^(__Lparam& (0+65280)),w
+   685  00730C  6F3B               	movwf	(?_ldr_flash_write+2)^(__Lparam& (0+65280
+      +                          ))
+   686  00730E  C515  F53C         	movff	?a_boot_loader+10,?_ldr_flash_write+3
+   687  007312  C516  F53D         	movff	?a_boot_loader+11,?_ldr_flash_write+4
+   688  007316  C517  F53E         	movff	?a_boot_loader+12,?_ldr_flash_write+5
+   689  00731A  C518  F53F         	movff	?a_boot_loader+13,?_ldr_flash_write+6
+   690  00731E  D9F0               	call	_ldr_flash_write	;wreg free
+   691                           ;bootldr.c: 284: }
+   692  007320                     l45:
+   693                           ;bootldr.c: 286: }
+   694  007320  0E66               	movlw	102
+   695  007322  D995               	call	_bootldr_putch
+   696                           ;bootldr.c: 288: }
+   697  007324  D6AE               	goto	l7
+   698  007326                     l44:
+   699  007326  0105               	movlb	__Lparam shr (0+8)
+   700  007328  050D               	decf	(?a_boot_loader+2)^(__Lparam& (0+65280)),w
+   701  00732A  A4D8               	btfss	status,2,c
+   702  00732C  D056               	goto	l54
+   703                           ;bootldr.c: 290: {
+   704  00732E  510E               	movf	(?a_boot_loader+3)^(__Lparam& (0+65280)),w
+   705  007330  B4D8               	btfsc	status,2,c
+   706  007332  D050               	goto	l55
+   707                           ;bootldr.c: 292: {
+   708  007334  5115               	movf	(?a_boot_loader+10)^(__Lparam& (0+65280)),
+      +                          w
+   709  007336  6F10               	movwf	(?a_boot_loader+5)^(__Lparam& (0+65280))
+   710  007338                     l59:
+   711  007338  0105               	movlb	__Lparam shr (0+8)
+   712  00733A  510E               	movf	(?a_boot_loader+3)^(__Lparam& (0+65280)),w
+   713  00733C  2515               	addwf	(?a_boot_loader+10)^(__Lparam& (0+65280))
+      +                          ,w
+   714  00733E  6E04               	movwf	btemp+4
+   715  007340  0E00               	movlw	0
+   716  007342  2116               	addwfc	(?a_boot_loader+11)^(__Lparam& (0+65280)
+      +                          ),w
+   717  007344  6E05               	movwf	btemp+5
+   718  007346  0E00               	movlw	0
+   719  007348  2117               	addwfc	(?a_boot_loader+12)^(__Lparam& (0+65280)
+      +                          ),w
+   720  00734A  6E06               	movwf	btemp+6
+   721  00734C  0E00               	movlw	0
+   722  00734E  2118               	addwfc	(?a_boot_loader+13)^(__Lparam& (0+65280)
+      +                          ),w
+   723  007350  6E07               	movwf	btemp+7
+   724  007352  C510  F000         	movff	?a_boot_loader+5,btemp
+   725  007356  6A01               	clrf	btemp+1
+   726  007358  6A02               	clrf	btemp+2
+   727  00735A  6A03               	clrf	btemp+3
+   728  00735C  5007               	movf	btemp+7,w
+   729  00735E  5C03               	subwf	btemp+3,w
+   730  007360  E108               	bnz	u305
+   731  007362  5006               	movf	btemp+6,w
+   732  007364  5C02               	subwf	btemp+2,w
+   733  007366  E105               	bnz	u305
+   734  007368  5005               	movf	btemp+5,w
+   735  00736A  5C01               	subwf	btemp+1,w
+   736  00736C  E102               	bnz	u305
+   737  00736E  5004               	movf	btemp+4,w
+   738  007370  5C00               	subwf	btemp,w
+   739  007372                     u305:
+   740  007372  B0D8               	btfsc	status,0,c
+   741  007374  D02F               	goto	l55
+   742                           ;bootldr.c: 294: {
+   743                           ;bootldr.c: 296: load_tbl_ptr(0x200000+i);
+   744  007376  C510  F000         	movff	?a_boot_loader+5,btemp
+   745  00737A  6A01               	clrf	btemp+1
+   746  00737C  6A02               	clrf	btemp+2
+   747  00737E  6A03               	clrf	btemp+3
+   748  007380  0E00               	movlw	0
+   749  007382  2400               	addwf	btemp,w
+   750  007384  0105               	movlb	__Lparam shr (0+8)
+   751  007386  6F87               	movwf	?_load_tbl_ptr^(__Lparam& (0+65280))
+   752  007388  0E00               	movlw	0
+   753  00738A  2001               	addwfc	btemp+1,w
+   754  00738C  6F88               	movwf	(?_load_tbl_ptr+1)^(__Lparam& (0+65280))
+   755  00738E  0E20               	movlw	32
+   756  007390  2002               	addwfc	btemp+2,w
+   757  007392  6F89               	movwf	(?_load_tbl_ptr+2)^(__Lparam& (0+65280))
+   758  007394  0E00               	movlw	0
+   759  007396  2003               	addwfc	btemp+3,w
+   760  007398  6F8A               	movwf	(?_load_tbl_ptr+3)^(__Lparam& (0+65280))
+   761  00739A  DA7D               	call	_load_tbl_ptr	;wreg free
+   762                           ;bootldr.c: 297: TABLAT=program_data[i-data_addr
+      +                          ess];
+   763  00739C  0105               	movlb	__Lparam shr (0+8)
+   764  00739E  5110               	movf	(?a_boot_loader+5)^(__Lparam& (0+65280)),w
+   765  0073A0  90D8               	bcf	status,0,c
+   766  0073A2  5515               	subfwb	(?a_boot_loader+10)^(__Lparam& (0+65280)
+      +                          ),w
+   767  0073A4  6E00               	movwf	btemp
+   768  0073A6  0E00               	movlw	0
+   769  0073A8  5516               	subfwb	(?a_boot_loader+11)^(__Lparam& (0+65280)
+      +                          ),w
+   770  0073AA  6E01               	movwf	btemp+1
+   771  0073AC  0E19               	movlw	low (?a_boot_loader+14)
+   772  0073AE  2400               	addwf	btemp,w
+   773  0073B0  6EE9               	movwf	fsr0l,c
+   774  0073B2  0E05               	movlw	high (?a_boot_loader+14)
+   775  0073B4  2001               	addwfc	btemp+1,w
+   776  0073B6  6EEA               	movwf	fsr0h
+   777  0073B8  50EF               	movf	indf0,w,c
+   778  0073BA  6EF5               	movwf	tablat,c	;volatile
+   779                           ;bootldr.c: 298: asm("\tTBLWT*");
+   780  0073BC  000C               	tblwt		*	;#
+   781                           ;bootldr.c: 299: EEPGD=1;WREN=1;
+   782  0073BE  8EA6               	bsf	4006,7,c
+   783  0073C0  84A6               	bsf	4006,2,c	;volatile
+   784                           ;bootldr.c: 300: GIE=0;
+   785  0073C2  9EF2               	bcf	intcon,7,c
+   786                           ;bootldr.c: 301: EECON2=0x55;
+   787  0073C4  0E55               	movlw	85
+   788  0073C6  6EA7               	movwf	4007,c	;volatile
+   789                           ;bootldr.c: 302: EECON2=0xAA;
+   790  0073C8  0EAA               	movlw	170
+   791  0073CA  6EA7               	movwf	4007,c	;volatile
+   792                           ;bootldr.c: 303: WR=1;
+   793  0073CC  82A6               	bsf	4006,1,c	;volatile
+   794                           ;bootldr.c: 304: asm("\tNOP");
+   795  0073CE  F000               	nop		;#
+   796                           ;bootldr.c: 305: }
+   797  0073D0  2B10               	incf	(?a_boot_loader+5)^(__Lparam& (0+65280)),f
+   798  0073D2  D7B2               	goto	l59
+   799  0073D4                     l55:
+   800                           ;bootldr.c: 306: }
+   801  0073D4  0E66               	movlw	102
+   802  0073D6  D93B               	call	_bootldr_putch
+   803                           ;bootldr.c: 308: }
+   804  0073D8  D654               	goto	l7
+   805  0073DA                     l54:
+   806  0073DA  0105               	movlb	__Lparam shr (0+8)
+   807  0073DC  510D               	movf	(?a_boot_loader+2)^(__Lparam& (0+65280)),w
+   808  0073DE  0A02               	xorlw	2
+   809  0073E0  A4D8               	btfss	status,2,c
+   810  0073E2  D088               	goto	l61
+   811                           ;bootldr.c: 310: {
+   812  0073E4  510E               	movf	(?a_boot_loader+3)^(__Lparam& (0+65280)),w
+   813  0073E6  B4D8               	btfsc	status,2,c
+   814  0073E8  D082               	goto	l62
+   815                           ;bootldr.c: 312: {
+   816  0073EA  5115               	movf	(?a_boot_loader+10)^(__Lparam& (0+65280)),
+      +                          w
+   817  0073EC  6F10               	movwf	(?a_boot_loader+5)^(__Lparam& (0+65280))
+   818  0073EE                     l66:
+   819  0073EE  0105               	movlb	__Lparam shr (0+8)
+   820  0073F0  510E               	movf	(?a_boot_loader+3)^(__Lparam& (0+65280)),w
+   821  0073F2  2515               	addwf	(?a_boot_loader+10)^(__Lparam& (0+65280))
+      +                          ,w
+   822  0073F4  6E04               	movwf	btemp+4
+   823  0073F6  0E00               	movlw	0
+   824  0073F8  2116               	addwfc	(?a_boot_loader+11)^(__Lparam& (0+65280)
+      +                          ),w
+   825  0073FA  6E05               	movwf	btemp+5
+   826  0073FC  0E00               	movlw	0
+   827  0073FE  2117               	addwfc	(?a_boot_loader+12)^(__Lparam& (0+65280)
+      +                          ),w
+   828  007400  6E06               	movwf	btemp+6
+   829  007402  0E00               	movlw	0
+   830  007404  2118               	addwfc	(?a_boot_loader+13)^(__Lparam& (0+65280)
+      +                          ),w
+   831  007406  6E07               	movwf	btemp+7
+   832  007408  C510  F000         	movff	?a_boot_loader+5,btemp
+   833  00740C  6A01               	clrf	btemp+1
+   834  00740E  6A02               	clrf	btemp+2
+   835  007410  6A03               	clrf	btemp+3
+   836  007412  5007               	movf	btemp+7,w
+   837  007414  5C03               	subwf	btemp+3,w
+   838  007416  E108               	bnz	u395
+   839  007418  5006               	movf	btemp+6,w
+   840  00741A  5C02               	subwf	btemp+2,w
+   841  00741C  E105               	bnz	u395
+   842  00741E  5005               	movf	btemp+5,w
+   843  007420  5C01               	subwf	btemp+1,w
+   844  007422  E102               	bnz	u395
+   845  007424  5004               	movf	btemp+4,w
+   846  007426  5C00               	subwf	btemp,w
+   847  007428                     u395:
+   848  007428  B0D8               	btfsc	status,0,c
+   849  00742A  D061               	goto	l62
+   850                           ;bootldr.c: 314: {
+   851                           ;bootldr.c: 315: if ((i == 2) || (i == 3) || (i 
+      +                          == 5))
+   852  00742C  0105               	movlb	__Lparam shr (0+8)
+   853  00742E  5110               	movf	(?a_boot_loader+5)^(__Lparam& (0+65280)),w
+   854  007430  0A02               	xorlw	2
+   855  007432  B4D8               	btfsc	status,2,c
+   856  007434  D009               	goto	u360
+   857  007436  5110               	movf	(?a_boot_loader+5)^(__Lparam& (0+65280)),w
+   858  007438  0A03               	xorlw	3
+   859  00743A  B4D8               	btfsc	status,2,c
+   860  00743C  D005               	goto	u360
+   861  00743E  0105               	movlb	__Lparam shr (0+8)
+   862  007440  5110               	movf	(?a_boot_loader+5)^(__Lparam& (0+65280)),w
+   863  007442  0A05               	xorlw	5
+   864  007444  A4D8               	btfss	status,2,c
+   865  007446  D050               	goto	l67
+   866  007448                     u360:
+   867                           ;bootldr.c: 316: {
+   868  007448  8CA6               	bsf	4006,6,c
+   869                           ;bootldr.c: 318: load_tbl_ptr(0x300000+i);
+   870  00744A  C510  F000         	movff	?a_boot_loader+5,btemp
+   871  00744E  6A01               	clrf	btemp+1
+   872  007450  6A02               	clrf	btemp+2
+   873  007452  6A03               	clrf	btemp+3
+   874  007454  0E00               	movlw	0
+   875  007456  2400               	addwf	btemp,w
+   876  007458  0105               	movlb	__Lparam shr (0+8)
+   877  00745A  6F87               	movwf	?_load_tbl_ptr^(__Lparam& (0+65280))
+   878  00745C  0E00               	movlw	0
+   879  00745E  2001               	addwfc	btemp+1,w
+   880  007460  6F88               	movwf	(?_load_tbl_ptr+1)^(__Lparam& (0+65280))
+   881  007462  0E30               	movlw	48
+   882  007464  2002               	addwfc	btemp+2,w
+   883  007466  6F89               	movwf	(?_load_tbl_ptr+2)^(__Lparam& (0+65280))
+   884  007468  0E00               	movlw	0
+   885  00746A  2003               	addwfc	btemp+3,w
+   886  00746C  6F8A               	movwf	(?_load_tbl_ptr+3)^(__Lparam& (0+65280))
+   887  00746E  DA13               	call	_load_tbl_ptr	;wreg free
+   888                           ;bootldr.c: 319: if (i == 3)
+   889  007470  0105               	movlb	__Lparam shr (0+8)
+   890  007472  5110               	movf	(?a_boot_loader+5)^(__Lparam& (0+65280)),w
+   891  007474  0A03               	xorlw	3
+   892  007476  A4D8               	btfss	status,2,c
+   893  007478  D01D               	goto	l68
+   894                           ;bootldr.c: 320: {
+   895  00747A  5110               	movf	(?a_boot_loader+5)^(__Lparam& (0+65280)),w
+   896  00747C  90D8               	bcf	status,0,c
+   897  00747E  5515               	subfwb	(?a_boot_loader+10)^(__Lparam& (0+65280)
+      +                          ),w
+   898  007480  6E00               	movwf	btemp
+   899  007482  0E00               	movlw	0
+   900  007484  5516               	subfwb	(?a_boot_loader+11)^(__Lparam& (0+65280)
+      +                          ),w
+   901  007486  6E01               	movwf	btemp+1
+   902  007488  0E19               	movlw	low (?a_boot_loader+14)
+   903  00748A  2400               	addwf	btemp,w
+   904  00748C  6EE1               	movwf	fsr1l,c
+   905  00748E  0E05               	movlw	high (?a_boot_loader+14)
+   906  007490  2001               	addwfc	btemp+1,w
+   907  007492  6EE2               	movwf	fsr1h
+   908  007494  5110               	movf	(?a_boot_loader+5)^(__Lparam& (0+65280)),w
+   909  007496  90D8               	bcf	status,0,c
+   910  007498  5515               	subfwb	(?a_boot_loader+10)^(__Lparam& (0+65280)
+      +                          ),w
+   911  00749A  6E00               	movwf	btemp
+   912  00749C  0E00               	movlw	0
+   913  00749E  5516               	subfwb	(?a_boot_loader+11)^(__Lparam& (0+65280)
+      +                          ),w
+   914  0074A0  6E01               	movwf	btemp+1
+   915  0074A2  0E19               	movlw	low (?a_boot_loader+14)
+   916  0074A4  2400               	addwf	btemp,w
+   917  0074A6  6EE9               	movwf	fsr0l,c
+   918  0074A8  0E05               	movlw	high (?a_boot_loader+14)
+   919  0074AA  2001               	addwfc	btemp+1,w
+   920  0074AC  6EEA               	movwf	fsr0h
+   921  0074AE  50EF               	movf	indf0,w,c
+   922  0074B0  0BFE               	andlw	-2
+   923  0074B2  6EE7               	movwf	indf1,c
+   924  0074B4                     l68:
+   925                           ;bootldr.c: 322: }
+   926  0074B4  0105               	movlb	__Lparam shr (0+8)
+   927  0074B6  5110               	movf	(?a_boot_loader+5)^(__Lparam& (0+65280)),w
+   928  0074B8  90D8               	bcf	status,0,c
+   929  0074BA  5515               	subfwb	(?a_boot_loader+10)^(__Lparam& (0+65280)
+      +                          ),w
+   930  0074BC  6E00               	movwf	btemp
+   931  0074BE  0E00               	movlw	0
+   932  0074C0  5516               	subfwb	(?a_boot_loader+11)^(__Lparam& (0+65280)
+      +                          ),w
+   933  0074C2  6E01               	movwf	btemp+1
+   934  0074C4  0E19               	movlw	low (?a_boot_loader+14)
+   935  0074C6  2400               	addwf	btemp,w
+   936  0074C8  6EE9               	movwf	fsr0l,c
+   937  0074CA  0E05               	movlw	high (?a_boot_loader+14)
+   938  0074CC  2001               	addwfc	btemp+1,w
+   939  0074CE  6EEA               	movwf	fsr0h
+   940  0074D0  50EF               	movf	indf0,w,c
+   941  0074D2  6EF5               	movwf	tablat,c	;volatile
+   942                           ;bootldr.c: 324: asm("\tTBLWT*");
+   943  0074D4  000C               	tblwt		*	;#
+   944                           ;bootldr.c: 325: EEPGD=1;WREN=1;
+   945  0074D6  8EA6               	bsf	4006,7,c
+   946  0074D8  84A6               	bsf	4006,2,c	;volatile
+   947                           ;bootldr.c: 326: GIE=0;
+   948  0074DA  9EF2               	bcf	intcon,7,c
+   949                           ;bootldr.c: 327: EECON2=0x55;
+   950  0074DC  0E55               	movlw	85
+   951  0074DE  6EA7               	movwf	4007,c	;volatile
+   952                           ;bootldr.c: 328: EECON2=0xAA;
+   953  0074E0  0EAA               	movlw	170
+   954  0074E2  6EA7               	movwf	4007,c	;volatile
+   955                           ;bootldr.c: 329: WR=1;
+   956  0074E4  82A6               	bsf	4006,1,c	;volatile
+   957                           ;bootldr.c: 330: asm("\tNOP");
+   958  0074E6  F000               	nop		;#
+   959  0074E8                     l67:
+   960                           ;bootldr.c: 331: }
+   961  0074E8  0105               	movlb	__Lparam shr (0+8)
+   962  0074EA  2B10               	incf	(?a_boot_loader+5)^(__Lparam& (0+65280)),f
+   963  0074EC  D780               	goto	l66
+   964  0074EE                     l62:
+   965                           ;bootldr.c: 333: }
+   966  0074EE  0E66               	movlw	102
+   967  0074F0  D8AE               	call	_bootldr_putch
+   968                           ;bootldr.c: 335: }
+   969  0074F2  D5C7               	goto	l7
+   970  0074F4                     l61:
+   971  0074F4  0105               	movlb	__Lparam shr (0+8)
+   972  0074F6  510D               	movf	(?a_boot_loader+2)^(__Lparam& (0+65280)),w
+   973  0074F8  0A03               	xorlw	3
+   974  0074FA  A4D8               	btfss	status,2,c
+   975  0074FC  D5C2               	goto	l7
+   976                           ;bootldr.c: 337: {
+   977  0074FE  510E               	movf	(?a_boot_loader+3)^(__Lparam& (0+65280)),w
+   978  007500  B4D8               	btfsc	status,2,c
+   979  007502  D01C               	goto	l71
+   980                           ;bootldr.c: 339: {
+   981  007504  6B10               	clrf	(?a_boot_loader+5)^(__Lparam& (0+65280))
+   982  007506                     l75:
+   983  007506  0105               	movlb	__Lparam shr (0+8)
+   984  007508  510E               	movf	(?a_boot_loader+3)^(__Lparam& (0+65280)),w
+   985  00750A  5D10               	subwf	(?a_boot_loader+5)^(__Lparam& (0+65280)),
+      +                          w
+   986  00750C  B0D8               	btfsc	status,0,c
+   987  00750E  D016               	goto	l71
+   988                           ;bootldr.c: 341: {
+   989                           ;bootldr.c: 342: eeprom_write(data_address+i,pro
+      +                          gram_data[i]);
+   990  007510  0105               	movlb	__Lparam shr (0+8)
+   991  007512  5110               	movf	(?a_boot_loader+5)^(__Lparam& (0+65280)),w
+   992  007514  2515               	addwf	(?a_boot_loader+10)^(__Lparam& (0+65280))
+      +                          ,w
+   993  007516  6F39               	movwf	?_eeprom_write^(__Lparam& (0+65280))
+   994  007518  0E00               	movlw	0
+   995  00751A  2116               	addwfc	(?a_boot_loader+11)^(__Lparam& (0+65280)
+      +                          ),w
+   996  00751C  6F3A               	movwf	(?_eeprom_write^(__Lparam& (0+65280))+1)
+   997  00751E  5110               	movf	(?a_boot_loader+5)^(__Lparam& (0+65280)),w
+   998  007520  EE05  F019         	lfsr	0,?a_boot_loader+14
+   999  007524  26E9               	addwf	fsr0l,f,c
+  1000  007526  0E00               	movlw	0
+  1001  007528  22EA               	addwfc	fsr0h,f,c
+  1002  00752A  50EF               	movf	indf0,w,c
+  1003  00752C  6F3B               	movwf	(?_eeprom_write+2)^(__Lparam& (0+65280))
+  1004  00752E  ECDA  F03D         	call	_eeprom_write	;wreg free
+  1005                           ;bootldr.c: 343: while(WR)continue;
+  1006  007532                     l77:
+  1007  007532  B2A6               	btfsc	4006,1,c	;volatile
+  1008  007534  D7FE               	goto	l77
+  1009                           ;bootldr.c: 344: }
+  1010  007536  0105               	movlb	__Lparam shr (0+8)
+  1011  007538  2B10               	incf	(?a_boot_loader+5)^(__Lparam& (0+65280)),f
+  1012  00753A  D7E5               	goto	l75
+  1013  00753C                     l71:
+  1014                           ;bootldr.c: 345: }
+  1015  00753C  0E66               	movlw	102
+  1016  00753E  D887               	call	_bootldr_putch
+  1017                           ;bootldr.c: 347: }
+  1018                           ;bootldr.c: 349: else if (type == 4)
+  1019  007540  D5A0               	goto	l7
+  1020  007542                     l43:
+  1021  007542  0105               	movlb	__Lparam shr (0+8)
+  1022  007544  510C               	movf	(?a_boot_loader+1)^(__Lparam& (0+65280)),w
+  1023  007546  0A04               	xorlw	4
+  1024  007548  A4D8               	btfss	status,2,c
+  1025  00754A  D01E               	goto	l80
+  1026                           ;bootldr.c: 350: {
+  1027  00754C  511A               	movf	(?a_boot_loader+15)^(__Lparam& (0+65280)),
+      +                          w
+  1028  00754E  A4D8               	btfss	status,2,c
+  1029  007550  D002               	goto	l81
+  1030                           ;bootldr.c: 352: {
+  1031  007552  6B0D               	clrf	(?a_boot_loader+2)^(__Lparam& (0+65280))
+  1032                           ;bootldr.c: 354: CFGS = 0;
+  1033  007554  9CA6               	bcf	4006,6,c
+  1034  007556                     l81:
+  1035                           ;bootldr.c: 355: }
+  1036  007556  0105               	movlb	__Lparam shr (0+8)
+  1037  007558  511A               	movf	(?a_boot_loader+15)^(__Lparam& (0+65280)),
+      +                          w
+  1038  00755A  0A20               	xorlw	32
+  1039  00755C  A4D8               	btfss	status,2,c
+  1040  00755E  D002               	goto	l82
+  1041                           ;bootldr.c: 357: {
+  1042  007560  0E01               	movlw	1
+  1043  007562  6F0D               	movwf	(?a_boot_loader+2)^(__Lparam& (0+65280))
+  1044  007564                     l82:
+  1045                           ;bootldr.c: 359: }
+  1046  007564  0105               	movlb	__Lparam shr (0+8)
+  1047  007566  511A               	movf	(?a_boot_loader+15)^(__Lparam& (0+65280)),
+      +                          w
+  1048  007568  0A30               	xorlw	48
+  1049  00756A  A4D8               	btfss	status,2,c
+  1050  00756C  D003               	goto	l83
+  1051                           ;bootldr.c: 361: {
+  1052  00756E  0E02               	movlw	2
+  1053  007570  6F0D               	movwf	(?a_boot_loader+2)^(__Lparam& (0+65280))
+  1054                           ;bootldr.c: 363: CFGS = 1;
+  1055  007572  8CA6               	bsf	4006,6,c
+  1056  007574                     l83:
+  1057                           ;bootldr.c: 364: }
+  1058  007574  0105               	movlb	__Lparam shr (0+8)
+  1059  007576  511A               	movf	(?a_boot_loader+15)^(__Lparam& (0+65280)),
+      +                          w
+  1060  007578  0AF0               	xorlw	-16
+  1061  00757A  A4D8               	btfss	status,2,c
+  1062  00757C  D002               	goto	l84
+  1063                           ;bootldr.c: 366: {
+  1064  00757E  0E03               	movlw	3
+  1065  007580  6F0D               	movwf	(?a_boot_loader+2)^(__Lparam& (0+65280))
+  1066  007582                     l84:
+  1067                           ;bootldr.c: 368: }
+  1068  007582  0E66               	movlw	102
+  1069  007584  D864               	call	_bootldr_putch
+  1070                           ;bootldr.c: 370: }
+  1071  007586  D57D               	goto	l7
+  1072  007588                     l80:
+  1073                           ;bootldr.c: 372: {
+  1074  007588  0E66               	movlw	102
+  1075  00758A  D861               	call	_bootldr_putch
+  1076                           ;bootldr.c: 374: memory_type = 0;
+  1077  00758C  0105               	movlb	__Lparam shr (0+8)
+  1078  00758E  6B0D               	clrf	(?a_boot_loader+2)^(__Lparam& (0+65280))
+  1079                           ;bootldr.c: 375: }
+  1080                           ;bootldr.c: 376: }
+  1081  007590  D578               	goto	l7
+  1082  007592                     l86:
+  1083                           ;bootldr.c: 378: }
+  1084                           ;bootldr.c: 380: {
+  1085  007592  0105               	movlb	__Lparam shr (0+8)
+  1086  007594  0E11               	movlw	low (?a_boot_loader+6)
+  1087  007596  6F39               	movwf	?_ldr_flash_write^(__Lparam& (0+65280))
+  1088  007598  0E05               	movlw	high (?a_boot_loader+6)
+  1089  00759A  6F3A               	movwf	(?_ldr_flash_write+1)^(__Lparam& (0+65280
+      +                          ))
+  1090  00759C  0E04               	movlw	4
+  1091  00759E  6F3B               	movwf	(?_ldr_flash_write+2)^(__Lparam& (0+65280
+      +                          ))
+  1092  0075A0  0EA8               	movlw	low _application_jump
+  1093  0075A2  6F3C               	movwf	(?_ldr_flash_write+3)^(__Lparam& (0+65280
+      +                          ))
+  1094  0075A4  0E7B               	movlw	high _application_jump
+  1095  0075A6  6F3D               	movwf	((?_ldr_flash_write+3)^(__Lparam& (0+6528
+      +                          0))+1)
+  1096  0075A8  6B3E               	clrf	(?_ldr_flash_write+5)^(__Lparam& (0+65280)
+      +                          )
+  1097  0075AA  6B3F               	clrf	(?_ldr_flash_write+6)^(__Lparam& (0+65280)
+      +                          )
+  1098  0075AC  D8A9               	call	_ldr_flash_write	;wreg free
+  1099                           ;bootldr.c: 382: bootldr_putch('f');
+  1100  0075AE  0E66               	movlw	102
+  1101  0075B0  D84E               	call	_bootldr_putch
+  1102                           ;bootldr.c: 383: while ((TRMT != 1) || (TXIF != 
+      +                          1))
+  1103  0075B2                     l87:
+  1104                           ;bootldr.c: 384: {
+  1105  0075B2  B2AC               	btfsc	4012,1,c	;volatile
+  1106  0075B4  A89E               	btfss	3998,4,c	;volatile
+  1107  0075B6  D7FD               	goto	l87
+  1108  0075B8  D2F0               	goto	u800
+  1109                           ;bootldr.c: 386: STKPTR = 0;
+  1110                           ;bootldr.c: 387: asm("goto _application_jump");
+  1111                           ;bootldr.c: 388: }
+  1112  0075BA                     l10:
+  1113  0075BA  0105               	movlb	__Lparam shr (0+8)
+  1114  0075BC  510B               	movf	?a_boot_loader^(__Lparam& (0+65280)),w
+  1115  0075BE  0A41               	xorlw	65
+  1116  0075C0  E101 D569          	bz	l15
+  1117  0075C4  0A03               	xorlw	3
+  1118  0075C6  E101 D59B          	bz	l29
+  1119  0075CA  0A07               	xorlw	7
+  1120  0075CC  E101 D586          	bz	l26
+  1121  0075D0  0A03               	xorlw	3
+  1122  0075D2  E0DF               	bz	l86
+  1123  0075D4  0A16               	xorlw	22
+  1124  0075D6  E101 D590          	bz	l28
+  1125  0075DA  0A02               	xorlw	2
+  1126  0075DC  E101 D564          	bz	l20
+  1127  0075E0  0A01               	xorlw	1
+  1128  0075E2  E101 D590          	bz	l31
+  1129  0075E6  0A07               	xorlw	7
+  1130  0075E8  E101 D58D          	bz	l31
+  1131  0075EC  0A01               	xorlw	1
+  1132  0075EE  E101 D575          	bz	l26
+  1133  0075F2  0A03               	xorlw	3
+  1134  0075F4  E101 D550          	bz	l16
+  1135  0075F8  0A0E               	xorlw	14
+  1136  0075FA  E101 D546          	bz	l11
+  1137  0075FE  0A02               	xorlw	2
+  1138  007600  E101 D5E1          	bz	l37
+  1139  007604  D53E               	goto	l7
+  1140                           ;bootldr.c: 390: }
+  1141  007606  FFFF               	dw	65535
+  1142  007608  D501               	goto	f4452
+  1143                           ;bootldr.c: 393: unsigned char
+  1144                           ;bootldr.c: 394: bootldr_getch(void)
+  1145                           ;bootldr.c: 395: {
+  1146  00760A                     _bootldr_getch:
+  1147  00760A  FFFF               	dw	65535
+  1148  00760C                     f4552:
+  1149  000000                     
+  1150                           ;bootldr.c: 396: unsigned long timeout;
+  1151  00760C  0E40               	movlw	64
+  1152  00760E  6E00               	movwf	btemp
+  1153  007610  0E0D               	movlw	13
+  1154  007612  6E01               	movwf	btemp+1
+  1155  007614  0E03               	movlw	3
+  1156  007616  6E02               	movwf	btemp+2
+  1157  007618  6A03               	clrf	btemp+3
+  1158                           ;bootldr.c: 398: while( (RCIF != 1) && (timeout!
+      +                          =0) )
+  1159  00761A  D005               	goto	l91
+  1160  00761C                     l92:
+  1161                           ;bootldr.c: 399: {
+  1162  00761C  0600               	decf	btemp,f
+  1163  00761E  0E00               	movlw	0
+  1164  007620  5A01               	subwfb	btemp+1,f
+  1165  007622  5A02               	subwfb	btemp+2,f
+  1166  007624  5A03               	subwfb	btemp+3,f
+  1167  007626                     l91:
+  1168  007626  5003               	movf	btemp+3,w
+  1169  007628  1000               	iorwf	btemp,w
+  1170  00762A  1001               	iorwf	btemp+1,w
+  1171                           ;bootldr.c: 401: }
+  1172  00762C  BA9E               	btfsc	3998,5,c	;volatile
+  1173  00762E  D006               	goto	L2
+  1174  007630  1002               	iorwf	btemp+2,w
+  1175  007632  A4D8               	btfss	status,2,c
+  1176  007634  D7F3               	goto	l92
+  1177                           ;bootldr.c: 402: if (timeout == 0)
+  1178  007636  5003               	movf	btemp+3,w
+  1179  007638  1000               	iorwf	btemp,w
+  1180  00763A  1001               	iorwf	btemp+1,w
+  1181  00763C                     L2:
+  1182  00763C  1002               	iorwf	btemp+2,w
+  1183  00763E  A4D8               	btfss	status,2,c
+  1184  007640  D002               	goto	l94
+  1185                           ;bootldr.c: 403: return 'E';
+  1186  007642  0E45               	movlw	69
+  1187  007644  D001               	goto	l90
+  1188  007646                     l94:
+  1189                           ;bootldr.c: 405: return RCREG;
+  1190  007646  50AE               	movf	4014,w,c	;volatile
+  1191                           ;bootldr.c: 406: }
+  1192  007648                     l90:
+  1193  007648  0012               	return	
+  1194  00764A  FFFF               	dw	65535
+  1195  00764C  D7DF               	goto	f4552
+  1196                           ;bootldr.c: 408: void
+  1197                           ;bootldr.c: 409: bootldr_putch(char c)
+  1198                           ;bootldr.c: 410: {
+  1199  00764E                     _bootldr_putch:
+  1200  00764E  FFFF               	dw	65535
+  1201  007650                     f4562:
+  1202  000000                     
+  1203                           ;bootldr.c: 421: while(!TXIF)
+  1204  007650                     l98:
+  1205                           ;bootldr.c: 422: continue;
+  1206  007650  A89E               	btfss	3998,4,c	;volatile
+  1207  007652  D7FE               	goto	l98
+  1208                           ;bootldr.c: 423: TXREG=c;
+  1209  007654  6EAD               	movwf	4013,c	;volatile
+  1210                           ;bootldr.c: 424: }
+  1211  007656  0012               	return	
+  1212  007658  FFFF               	dw	65535
+  1213  00765A  D7FA               	goto	f4562
+  1214  00765C  0539               	dw	?_read_program
+  1215  00765E                     _read_program:
+  1216  00765E  FFFF               	dw	65535
+  1217  007660                     f4572:
+  1218  000000                     
+  1219                           ;bootldr.c: 429: unsigned char i;
+  1220  007660  0105               	movlb	__Lparam shr (0+8)
+  1221  007662  5139               	movf	?_read_program^(__Lparam& (0+65280)),w
+  1222  007664  6EF6               	movwf	tblptrl,c	;volatile
+  1223                           ;bootldr.c: 431: TBLPTRH=(((location)>>8)&0xFF);
+  1224  007666  513A               	movf	(?_read_program+1)^(__Lparam& (0+65280)),w
+  1225  007668  6EF7               	movwf	tblptrh,c	;volatile
+  1226                           ;bootldr.c: 432: TBLPTRU=(((location)>>8)>>8);
+  1227  00766A  0E08               	movlw	8
+  1228  00766C  C539  F000         	movff	?_read_program,btemp
+  1229  007670  C53A  F001         	movff	?_read_program+1,btemp+1
+  1230  007674  C53B  F002         	movff	?_read_program+2,btemp+2
+  1231  007678  C53C  F003         	movff	?_read_program+3,btemp+3
+  1232  00767C  EC18  F03E         	call	llslr
+  1233  007680  0E08               	movlw	8
+  1234  007682  EC18  F03E         	call	llslr
+  1235  007686  5000               	movf	btemp,w
+  1236  007688  6EF8               	movwf	tblptru,c	;volatile
+  1237                           ;bootldr.c: 433: for (i=0;i<length;i++)
+  1238  00768A  6AD9               	clrf	fsr2l,c
+  1239  00768C                     l104:
+  1240  00768C  0105               	movlb	__Lparam shr (0+8)
+  1241  00768E  513D               	movf	(?_read_program+4)^(__Lparam& (0+65280)),w
+  1242  007690  5CD9               	subwf	fsr2l,w,c
+  1243  007692  B0D8               	btfsc	status,0,c
+  1244  007694  D00C               	goto	u570
+  1245                           ;bootldr.c: 434: {
+  1246                           ;bootldr.c: 435: asm("\tTBLRD*+");
+  1247  007696  0009               	tblrd		*+	;#
+  1248                           ;bootldr.c: 436: store[i] = TABLAT;
+  1249  007698  50D9               	movf	fsr2l,w,c
+  1250  00769A  0105               	movlb	__Lparam shr (0+8)
+  1251  00769C  253E               	addwf	(?_read_program+5)^(__Lparam& (0+65280)),
+      +                          w
+  1252  00769E  6EE9               	movwf	fsr0l,c
+  1253  0076A0  0E00               	movlw	0
+  1254  0076A2  213F               	addwfc	(?_read_program+6)^(__Lparam& (0+65280))
+      +                          ,w
+  1255  0076A4  6EEA               	movwf	fsr0h
+  1256  0076A6  CFF5 FFEF          	movff	tablat,indf0	;volatile
+  1257                           ;bootldr.c: 437: }
+  1258  0076AA  2AD9               	incf	fsr2l,f,c
+  1259  0076AC  D7EF               	goto	l104
+  1260  0076AE                     u570:
+  1261                           ;bootldr.c: 438: }
+  1262  0076AE  0012               	return	
+  1263  0076B0  FFFF               	dw	65535
+  1264  0076B2  D7D6               	goto	f4572
+  1265                           ;bootldr.c: 440: void
+  1266                           ;bootldr.c: 441: bootldr_init_serial(unsigned ch
+      +                          ar standard_baud)
+  1267                           ;bootldr.c: 442: {
+  1268  0076B4                     _bootldr_init_serial:
+  1269  0076B4  FFFF               	dw	65535
+  1270  0076B6                     f4582:
+  1271  000000                     
+  1272                           ; _standard_baud loaded to fsr2l
+  1273  0076B6  6ED9               	movwf	fsr2l,c
+  1274                           ;bootldr.c: 456: unsigned char baud[8]={0xFF,0xF
+      +                          F,0xFF,129,64,32,21,10};
+  1275  0076B8  0105               	movlb	__Lparam shr (0+8)
+  1276  0076BA  6939               	setf	?a_bootldr_init_serial^(__Lparam& (0+65280
+      +                          ))
+  1277  0076BC  693A               	setf	(?a_bootldr_init_serial+1)^(__Lparam& (0+6
+      +                          5280))
+  1278  0076BE  693B               	setf	(?a_bootldr_init_serial+2)^(__Lparam& (0+6
+      +                          5280))
+  1279  0076C0  0E81               	movlw	129
+  1280  0076C2  6F3C               	movwf	(?a_bootldr_init_serial+3)^(__Lparam& (0+
+      +                          65280))
+  1281  0076C4  0E40               	movlw	64
+  1282  0076C6  6F3D               	movwf	(?a_bootldr_init_serial+4)^(__Lparam& (0+
+      +                          65280))
+  1283  0076C8  0E20               	movlw	32
+  1284  0076CA  6F3E               	movwf	(?a_bootldr_init_serial+5)^(__Lparam& (0+
+      +                          65280))
+  1285  0076CC  0E15               	movlw	21
+  1286  0076CE  6F3F               	movwf	(?a_bootldr_init_serial+6)^(__Lparam& (0+
+      +                          65280))
+  1287  0076D0  0E0A               	movlw	10
+  1288  0076D2  6F40               	movwf	(?a_bootldr_init_serial+7)^(__Lparam& (0+
+      +                          65280))
+  1289                           ;bootldr.c: 551: SPBRG=baud[standard_baud];
+  1290  0076D4  50D9               	movf	fsr2l,w,c
+  1291  0076D6  EE05  F039         	lfsr	0,?a_bootldr_init_serial
+  1292  0076DA  26E9               	addwf	fsr0l,f,c
+  1293  0076DC  0E00               	movlw	0
+  1294  0076DE  22EA               	addwfc	fsr0h,f,c
+  1295  0076E0  50EF               	movf	indf0,w,c
+  1296  0076E2  6EAF               	movwf	4015,c
+  1297                           ;bootldr.c: 552: BRGH=1;
+  1298  0076E4  84AC               	bsf	4012,2,c
+  1299                           ;bootldr.c: 553: SYNC=0;
+  1300  0076E6  98AC               	bcf	4012,4,c
+  1301                           ;bootldr.c: 554: SPEN=1;
+  1302  0076E8  8EAB               	bsf	4011,7,c
+  1303                           ;bootldr.c: 555: CREN=1;
+  1304  0076EA  88AB               	bsf	4011,4,c
+  1305                           ;bootldr.c: 556: SREN=0;
+  1306  0076EC  9AAB               	bcf	4011,5,c
+  1307                           ;bootldr.c: 557: TXIE=0;
+  1308  0076EE  989D               	bcf	3997,4,c
+  1309                           ;bootldr.c: 558: RCIE=0;
+  1310  0076F0  9A9D               	bcf	3997,5,c
+  1311                           ;bootldr.c: 559: TX9=0;
+  1312  0076F2  9CAC               	bcf	4012,6,c
+  1313                           ;bootldr.c: 560: RX9=0;
+  1314  0076F4  9CAB               	bcf	4011,6,c
+  1315                           ;bootldr.c: 561: TXEN=1;
+  1316  0076F6  8AAC               	bsf	4012,5,c
+  1317                           ;bootldr.c: 563: }
+  1318  0076F8  0012               	return	
+  1319  0076FA  FFFF               	dw	65535
+  1320  0076FC  D7DC               	goto	f4582
+  1321  0076FE  0539               	dw	?_ldr_flash_write
+  1322  007700                     _ldr_flash_write:
+  1323  007700  FFFF               	dw	65535
+  1324  007702                     f4592:
+  1325  000000                     
+  1326                           ;bootldr.c: 569: unsigned char counter = 0;
+  1327  007702  0105               	movlb	__Lparam shr (0+8)
+  1328  007704  6B42               	clrf	(?a_ldr_flash_write+2)^(__Lparam& (0+65280
+      +                          ))
+  1329                           ;bootldr.c: 570: unsigned char counter_high;
+  1330  007706  513C               	movf	(?_ldr_flash_write+3)^(__Lparam& (0+65280)
+      +                          ),w
+  1331  007708  0B3F               	andlw	63
+  1332  00770A  6ED9               	movwf	fsr2l,c
+  1333                           ;bootldr.c: 577: prebuffer_count=prebuffer;
+  1334  00770C  50D9               	movf	fsr2l,w,c
+  1335  00770E  6F41               	movwf	(?a_ldr_flash_write+1)^(__Lparam& (0+6528
+      +                          0))
+  1336                           ;bootldr.c: 578: length+=prebuffer_count;
+  1337  007710  5141               	movf	(?a_ldr_flash_write+1)^(__Lparam& (0+65280
+      +                          )),w
+  1338  007712  273B               	addwf	(?_ldr_flash_write+2)^(__Lparam& (0+65280
+      +                          )),f
+  1339                           ;bootldr.c: 580: dest_addr-=prebuffer_count;
+  1340  007714  C541  F000         	movff	?a_ldr_flash_write+1,btemp
+  1341  007718  6A01               	clrf	btemp+1
+  1342  00771A  6A02               	clrf	btemp+2
+  1343  00771C  6A03               	clrf	btemp+3
+  1344  00771E  5000               	movf	btemp,w
+  1345  007720  5F3C               	subwf	(?_ldr_flash_write+3)^(__Lparam& (0+65280
+      +                          )),f
+  1346  007722  5001               	movf	btemp+1,w
+  1347  007724  5B3D               	subwfb	(?_ldr_flash_write+4)^(__Lparam& (0+6528
+      +                          0)),f
+  1348  007726  5002               	movf	btemp+2,w
+  1349  007728  5B3E               	subwfb	(?_ldr_flash_write+5)^(__Lparam& (0+6528
+      +                          0)),f
+  1350  00772A  5003               	movf	btemp+3,w
+  1351  00772C  5B3F               	subwfb	(?_ldr_flash_write+6)^(__Lparam& (0+6528
+      +                          0)),f
+  1352                           ;bootldr.c: 582: while(length)
+  1353  00772E                     l107:
+  1354                           ;bootldr.c: 656: }
+  1355  00772E  0105               	movlb	__Lparam shr (0+8)
+  1356  007730  513B               	movf	(?_ldr_flash_write+2)^(__Lparam& (0+65280)
+      +                          ),w
+  1357  007732  B4D8               	btfsc	status,2,c
+  1358  007734  D0AC               	goto	u640
+  1359                           ;bootldr.c: 583: {
+  1360  007736  0105               	movlb	__Lparam shr (0+8)
+  1361  007738  513B               	movf	(?_ldr_flash_write+2)^(__Lparam& (0+65280)
+      +                          ),w
+  1362  00773A  6F40               	movwf	?a_ldr_flash_write^(__Lparam& (0+65280))
+  1363                           ;bootldr.c: 586: length-=64;
+  1364  00773C  0EC0               	movlw	192
+  1365  00773E  273B               	addwf	(?_ldr_flash_write+2)^(__Lparam& (0+65280
+      +                          )),f
+  1366                           ;bootldr.c: 588: if ( datalength > 64 )
+  1367  007740  0E40               	movlw	64
+  1368  007742  6540               	cpfsgt	?a_ldr_flash_write^(__Lparam& (0+65280))
+  1369  007744  D002               	goto	l110
+  1370                           ;bootldr.c: 589: datalength = 64;
+  1371  007746  6F40               	movwf	?a_ldr_flash_write^(__Lparam& (0+65280))
+  1372                           ;bootldr.c: 590: else
+  1373  007748  D002               	goto	l111
+  1374  00774A                     l110:
+  1375                           ;bootldr.c: 591: length=0;
+  1376  00774A  0105               	movlb	__Lparam shr (0+8)
+  1377  00774C  6B3B               	clrf	(?_ldr_flash_write+2)^(__Lparam& (0+65280)
+      +                          )
+  1378  00774E                     l111:
+  1379                           ;bootldr.c: 594: FSR1H=((((unsigned int)&BUFFER[
+      +                          0])>>8)&0xFF);
+  1380  00774E  0E05               	movlw	high (?a_ldr_flash_write+3)
+  1381  007750  6EE2               	movwf	fsr1h,c	;volatile
+  1382                           ;bootldr.c: 595: FSR1L=(((unsigned int)&BUFFER[0
+      +                          ])&0xFF);
+  1383  007752  0E43               	movlw	low (?a_ldr_flash_write+3)
+  1384  007754  6E00               	movwf	btemp
+  1385  007756  0E05               	movlw	high (?a_ldr_flash_write+3)
+  1386  007758  6E01               	movwf	btemp+1
+  1387  00775A  5000               	movf	btemp,w
+  1388  00775C  6EE1               	movwf	fsr1l,c	;volatile
+  1389                           ;bootldr.c: 597: load_tbl_ptr(dest_addr);
+  1390  00775E  C53C  F587         	movff	?_ldr_flash_write+3,?_load_tbl_ptr
+  1391  007762  C53D  F588         	movff	?_ldr_flash_write+4,?_load_tbl_ptr+1
+  1392  007766  C53E  F589         	movff	?_ldr_flash_write+5,?_load_tbl_ptr+2
+  1393  00776A  C53F  F58A         	movff	?_ldr_flash_write+6,?_load_tbl_ptr+3
+  1394  00776E  D893               	call	_load_tbl_ptr	;wreg free
+  1395                           ;bootldr.c: 599: while (prebuffer_count)
+  1396  007770                     l112:
+  1397                           ;bootldr.c: 605: }
+  1398  007770  0105               	movlb	__Lparam shr (0+8)
+  1399  007772  5141               	movf	(?a_ldr_flash_write+1)^(__Lparam& (0+65280
+      +                          )),w
+  1400  007774  B4D8               	btfsc	status,2,c
+  1401  007776  D013               	goto	l115
+  1402                           ;bootldr.c: 600: {
+  1403  007778  0009               	tblrd		*+	;#
+  1404                           ;bootldr.c: 602: POSTINC1=(TABLAT);
+  1405  00777A  50F5               	movf	tablat,w,c	;volatile
+  1406  00777C  6EE6               	movwf	postinc1,c	;volatile
+  1407                           ;bootldr.c: 603: counter++;
+  1408  00777E  0105               	movlb	__Lparam shr (0+8)
+  1409  007780  2B42               	incf	(?a_ldr_flash_write+2)^(__Lparam& (0+65280
+      +                          )),f
+  1410                           ;bootldr.c: 604: prebuffer_count--;
+  1411  007782  0741               	decf	(?a_ldr_flash_write+1)^(__Lparam& (0+65280
+      +                          )),f
+  1412  007784  D7F5               	goto	l112
+  1413                           ;bootldr.c: 609: while ( counter < datalength )
+  1414  007786                     l116:
+  1415                           ;bootldr.c: 610: {
+  1416  007786  C539  FFE9         	movff	?_ldr_flash_write,fsr0l
+  1417  00778A  C53A  FFEA         	movff	?_ldr_flash_write+1,fsr0h
+  1418  00778E  50EF               	movf	indf0,w,c
+  1419  007790  6ED9               	movwf	fsr2l,c
+  1420  007792  0105               	movlb	__Lparam shr (0+8)
+  1421  007794  4B39               	infsnz	?_ldr_flash_write^(__Lparam& (0+65280)),
+      +                          f
+  1422  007796  2B3A               	incf	(?_ldr_flash_write+1)^(__Lparam& (0+65280)
+      +                          ),f
+  1423                           ;bootldr.c: 612: POSTINC1=(data);
+  1424  007798  50D9               	movf	fsr2l,w,c
+  1425  00779A  6EE6               	movwf	postinc1,c	;volatile
+  1426                           ;bootldr.c: 613: counter++;
+  1427  00779C  2B42               	incf	(?a_ldr_flash_write+2)^(__Lparam& (0+65280
+      +                          )),f
+  1428  00779E                     l115:
+  1429                           ;bootldr.c: 614: }
+  1430  00779E  0105               	movlb	__Lparam shr (0+8)
+  1431  0077A0  5140               	movf	?a_ldr_flash_write^(__Lparam& (0+65280)),w
+  1432  0077A2  5D42               	subwf	(?a_ldr_flash_write+2)^(__Lparam& (0+6528
+      +                          0)),w
+  1433  0077A4  A0D8               	btfss	status,0,c
+  1434  0077A6  D7EF               	goto	l116
+  1435                           ;bootldr.c: 616: load_tbl_ptr(dest_addr+counter-
+      +                          1);
+  1436  0077A8  0105               	movlb	__Lparam shr (0+8)
+  1437  0077AA  5142               	movf	(?a_ldr_flash_write+2)^(__Lparam& (0+65280
+      +                          )),w
+  1438  0077AC  253C               	addwf	(?_ldr_flash_write+3)^(__Lparam& (0+65280
+      +                          )),w
+  1439  0077AE  6E00               	movwf	btemp
+  1440  0077B0  0E00               	movlw	0
+  1441  0077B2  213D               	addwfc	(?_ldr_flash_write+4)^(__Lparam& (0+6528
+      +                          0)),w
+  1442  0077B4  6E01               	movwf	btemp+1
+  1443  0077B6  0E00               	movlw	0
+  1444  0077B8  213E               	addwfc	(?_ldr_flash_write+5)^(__Lparam& (0+6528
+      +                          0)),w
+  1445  0077BA  6E02               	movwf	btemp+2
+  1446  0077BC  0E00               	movlw	0
+  1447  0077BE  213F               	addwfc	(?_ldr_flash_write+6)^(__Lparam& (0+6528
+      +                          0)),w
+  1448  0077C0  6E03               	movwf	btemp+3
+  1449  0077C2  0EFF               	movlw	255
+  1450  0077C4  2400               	addwf	btemp,w
+  1451  0077C6  6F87               	movwf	?_load_tbl_ptr^(__Lparam& (0+65280))
+  1452  0077C8  0EFF               	movlw	255
+  1453  0077CA  2001               	addwfc	btemp+1,w
+  1454  0077CC  6F88               	movwf	(?_load_tbl_ptr+1)^(__Lparam& (0+65280))
+  1455  0077CE  0EFF               	movlw	255
+  1456  0077D0  2002               	addwfc	btemp+2,w
+  1457  0077D2  6F89               	movwf	(?_load_tbl_ptr+2)^(__Lparam& (0+65280))
+  1458  0077D4  0EFF               	movlw	255
+  1459  0077D6  2003               	addwfc	btemp+3,w
+  1460  0077D8  6F8A               	movwf	(?_load_tbl_ptr+3)^(__Lparam& (0+65280))
+  1461  0077DA  D85D               	call	_load_tbl_ptr	;wreg free
+  1462                           ;bootldr.c: 618: while ( counter < 64 )
+  1463  0077DC  D005               	goto	l118
+  1464  0077DE                     l119:
+  1465                           ;bootldr.c: 619: {
+  1466  0077DE  000B               	tblrd		+*	;#
+  1467                           ;bootldr.c: 621: POSTINC1=(TABLAT);
+  1468  0077E0  50F5               	movf	tablat,w,c	;volatile
+  1469  0077E2  6EE6               	movwf	postinc1,c	;volatile
+  1470                           ;bootldr.c: 622: counter++;
+  1471  0077E4  0105               	movlb	__Lparam shr (0+8)
+  1472  0077E6  2B42               	incf	(?a_ldr_flash_write+2)^(__Lparam& (0+65280
+      +                          )),f
+  1473  0077E8                     l118:
+  1474                           ;bootldr.c: 623: }
+  1475  0077E8  0E3F               	movlw	63
+  1476  0077EA  0105               	movlb	__Lparam shr (0+8)
+  1477  0077EC  6542               	cpfsgt	(?a_ldr_flash_write+2)^(__Lparam& (0+652
+      +                          80))
+  1478  0077EE  D7F7               	goto	l119
+  1479                           ;bootldr.c: 624: counter = counter;
+  1480  0077F0  5142               	movf	(?a_ldr_flash_write+2)^(__Lparam& (0+65280
+      +                          )),w
+  1481                           ;bootldr.c: 625: ldr_FLASH_ERASE(dest_addr);
+  1482  0077F2  C53C  F583         	movff	?_ldr_flash_write+3,?_ldr_FLASH_ERASE
+  1483  0077F6  C53D  F584         	movff	?_ldr_flash_write+4,?_ldr_FLASH_ERASE+1
+  1484  0077FA  C53E  F585         	movff	?_ldr_flash_write+5,?_ldr_FLASH_ERASE+2
+  1485  0077FE  C53F  F586         	movff	?_ldr_flash_write+6,?_ldr_FLASH_ERASE+3
+  1486  007802  D863               	call	_ldr_FLASH_ERASE	;wreg free
+  1487                           ;bootldr.c: 628: load_tbl_ptr((dest_addr-1)&0x1F
+      +                          FFFF);
+  1488  007804  0105               	movlb	__Lparam shr (0+8)
+  1489  007806  0EFF               	movlw	255
+  1490  007808  253C               	addwf	(?_ldr_flash_write+3)^(__Lparam& (0+65280
+      +                          )),w
+  1491  00780A  6E00               	movwf	btemp
+  1492  00780C  0EFF               	movlw	255
+  1493  00780E  213D               	addwfc	(?_ldr_flash_write+4)^(__Lparam& (0+6528
+      +                          0)),w
+  1494  007810  6E01               	movwf	btemp+1
+  1495  007812  0EFF               	movlw	255
+  1496  007814  213E               	addwfc	(?_ldr_flash_write+5)^(__Lparam& (0+6528
+      +                          0)),w
+  1497  007816  6E02               	movwf	btemp+2
+  1498  007818  0EFF               	movlw	255
+  1499  00781A  213F               	addwfc	(?_ldr_flash_write+6)^(__Lparam& (0+6528
+      +                          0)),w
+  1500  00781C  6E03               	movwf	btemp+3
+  1501  00781E  5000               	movf	btemp,w
+  1502  007820  6F87               	movwf	?_load_tbl_ptr^(__Lparam& (0+65280))
+  1503  007822  5001               	movf	btemp+1,w
+  1504  007824  6F88               	movwf	(?_load_tbl_ptr+1)^(__Lparam& (0+65280))
+  1505  007826  0E1F               	movlw	31
+  1506  007828  1402               	andwf	btemp+2,w
+  1507  00782A  6F89               	movwf	(?_load_tbl_ptr+2)^(__Lparam& (0+65280))
+  1508  00782C  6B8A               	clrf	(?_load_tbl_ptr+3)^(__Lparam& (0+65280))
+  1509  00782E  D833               	call	_load_tbl_ptr	;wreg free
+  1510                           ;bootldr.c: 630: FSR1H=((((unsigned int)&BUFFER[
+      +                          0])>>8)&0xFF);
+  1511  007830  0E05               	movlw	high (?a_ldr_flash_write+3)
+  1512  007832  6EE2               	movwf	fsr1h,c	;volatile
+  1513                           ;bootldr.c: 631: FSR1L=(((unsigned int)&BUFFER[0
+      +                          ])&0xFF);
+  1514  007834  0E43               	movlw	low (?a_ldr_flash_write+3)
+  1515  007836  6E00               	movwf	btemp
+  1516  007838  0E05               	movlw	high (?a_ldr_flash_write+3)
+  1517  00783A  6E01               	movwf	btemp+1
+  1518  00783C  5000               	movf	btemp,w
+  1519  00783E  6EE1               	movwf	fsr1l,c	;volatile
+  1520                           ;bootldr.c: 633: counter_high=8;
+  1521  007840  0E08               	movlw	8
+  1522  007842  6ED9               	movwf	fsr2l,c
+  1523                           ;bootldr.c: 635: while(counter_high)
+  1524  007844                     l121:
+  1525                           ;bootldr.c: 652: }
+  1526  007844  50D9               	movf	fsr2l,w,c
+  1527  007846  B4D8               	btfsc	status,2,c
+  1528  007848  D018               	goto	u630
+  1529                           ;bootldr.c: 636: {
+  1530  00784A  0E08               	movlw	8
+  1531  00784C  0105               	movlb	__Lparam shr (0+8)
+  1532  00784E  6F42               	movwf	(?a_ldr_flash_write+2)^(__Lparam& (0+6528
+      +                          0))
+  1533                           ;bootldr.c: 638: while(counter)
+  1534  007850                     l124:
+  1535                           ;bootldr.c: 643: }
+  1536  007850  0105               	movlb	__Lparam shr (0+8)
+  1537  007852  5142               	movf	(?a_ldr_flash_write+2)^(__Lparam& (0+65280
+      +                          )),w
+  1538  007854  B4D8               	btfsc	status,2,c
+  1539  007856  D006               	goto	u620
+  1540                           ;bootldr.c: 639: {
+  1541  007858  50E6               	movf	postinc1,w,c	;volatile
+  1542  00785A  6EF5               	movwf	tablat,c	;volatile
+  1543                           ;bootldr.c: 641: asm("\tTBLWT+*");
+  1544  00785C  000F               	tblwt		+*	;#
+  1545                           ;bootldr.c: 642: counter--;
+  1546  00785E  0105               	movlb	__Lparam shr (0+8)
+  1547  007860  0742               	decf	(?a_ldr_flash_write+2)^(__Lparam& (0+65280
+      +                          )),f
+  1548  007862  D7F6               	goto	l124
+  1549  007864                     u620:
+  1550                           ;bootldr.c: 645: EEPGD=1;WREN=1;
+  1551  007864  8EA6               	bsf	4006,7,c
+  1552  007866  84A6               	bsf	4006,2,c	;volatile
+  1553                           ;bootldr.c: 646: GIE=0;
+  1554  007868  9EF2               	bcf	intcon,7,c
+  1555                           ;bootldr.c: 647: EECON2=0x55;
+  1556  00786A  0E55               	movlw	85
+  1557  00786C  6EA7               	movwf	4007,c	;volatile
+  1558                           ;bootldr.c: 648: EECON2=0xAA;
+  1559  00786E  0EAA               	movlw	170
+  1560  007870  6EA7               	movwf	4007,c	;volatile
+  1561                           ;bootldr.c: 649: WR=1;
+  1562  007872  82A6               	bsf	4006,1,c	;volatile
+  1563                           ;bootldr.c: 650: asm("\tNOP");
+  1564  007874  F000               	nop		;#
+  1565                           ;bootldr.c: 651: counter_high--;
+  1566  007876  06D9               	decf	fsr2l,f,c
+  1567  007878  D7E5               	goto	l121
+  1568  00787A                     u630:
+  1569                           ;bootldr.c: 653: WREN=0;
+  1570  00787A  94A6               	bcf	4006,2,c	;volatile
+  1571                           ;bootldr.c: 654: dest_addr+=64;
+  1572  00787C  0105               	movlb	__Lparam shr (0+8)
+  1573  00787E  0E40               	movlw	64
+  1574  007880  273C               	addwf	(?_ldr_flash_write+3)^(__Lparam& (0+65280
+      +                          )),f
+  1575  007882  0E00               	movlw	0
+  1576  007884  233D               	addwfc	(?_ldr_flash_write+4)^(__Lparam& (0+6528
+      +                          0)),f
+  1577  007886  233E               	addwfc	(?_ldr_flash_write+5)^(__Lparam& (0+6528
+      +                          0)),f
+  1578  007888  233F               	addwfc	(?_ldr_flash_write+6)^(__Lparam& (0+6528
+      +                          0)),f
+  1579                           ;bootldr.c: 655: prebuffer=0;
+  1580  00788A  6AD9               	clrf	fsr2l,c
+  1581  00788C  D750               	goto	l107
+  1582  00788E                     u640:
+  1583                           ;bootldr.c: 657: }
+  1584  00788E  0012               	return	
+  1585  007890  FFFF               	dw	65535
+  1586  007892  D737               	goto	f4592
+  1587  007894  0587               	dw	?_load_tbl_ptr
+  1588  007896                     _load_tbl_ptr:
+  1589  007896  FFFF               	dw	65535
+  1590  007898                     f4612:
+  1591  000000                     
+  1592                           ;bootldr.c: 661: TBLPTRU=((((addr)>>8)>>8)&0xFF)
+      +                          ;
+  1593  007898  0E08               	movlw	8
+  1594  00789A  C587  F000         	movff	?_load_tbl_ptr,btemp
+  1595  00789E  C588  F001         	movff	?_load_tbl_ptr+1,btemp+1
+  1596  0078A2  C589  F002         	movff	?_load_tbl_ptr+2,btemp+2
+  1597  0078A6  C58A  F003         	movff	?_load_tbl_ptr+3,btemp+3
+  1598  0078AA  EC18  F03E         	call	llslr
+  1599  0078AE  0E08               	movlw	8
+  1600  0078B0  EC18  F03E         	call	llslr
+  1601  0078B4  5000               	movf	btemp,w
+  1602  0078B6  6EF8               	movwf	tblptru,c	;volatile
+  1603                           ;bootldr.c: 662: TBLPTRH=(((addr)>>8)&0xFF);
+  1604  0078B8  0105               	movlb	__Lparam shr (0+8)
+  1605  0078BA  5188               	movf	(?_load_tbl_ptr+1)^(__Lparam& (0+65280)),w
+  1606  0078BC  6EF7               	movwf	tblptrh,c	;volatile
+  1607                           ;bootldr.c: 663: TBLPTRL=((addr)&0xFF);
+  1608  0078BE  5187               	movf	?_load_tbl_ptr^(__Lparam& (0+65280)),w
+  1609  0078C0  6EF6               	movwf	tblptrl,c	;volatile
+  1610                           ;bootldr.c: 664: }
+  1611  0078C2  0012               	return	
+  1612  0078C4  FFFF               	dw	65535
+  1613  0078C6  D7E8               	goto	f4612
+  1614  0078C8  0583               	dw	?_ldr_FLASH_ERASE
+  1615  0078CA                     _ldr_FLASH_ERASE:
+  1616  0078CA  FFFF               	dw	65535
+  1617  0078CC                     f4622:
+  1618  000000                     
+  1619                           ;bootldr.c: 668: load_tbl_ptr(addr);
+  1620  0078CC  C583  F587         	movff	?_ldr_FLASH_ERASE,?_load_tbl_ptr
+  1621  0078D0  C584  F588         	movff	?_ldr_FLASH_ERASE+1,?_load_tbl_ptr+1
+  1622  0078D4  C585  F589         	movff	?_ldr_FLASH_ERASE+2,?_load_tbl_ptr+2
+  1623  0078D8  C586  F58A         	movff	?_ldr_FLASH_ERASE+3,?_load_tbl_ptr+3
+  1624  0078DC  DFDC               	call	_load_tbl_ptr	;wreg free
+  1625                           ;bootldr.c: 669: CFGS=0;
+  1626  0078DE  9CA6               	bcf	4006,6,c
+  1627                           ;bootldr.c: 670: EEPGD=1;
+  1628  0078E0  8EA6               	bsf	4006,7,c
+  1629                           ;bootldr.c: 671: WREN=1;
+  1630  0078E2  84A6               	bsf	4006,2,c	;volatile
+  1631                           ;bootldr.c: 672: FREE=1;
+  1632  0078E4  88A6               	bsf	4006,4,c	;volatile
+  1633                           ;bootldr.c: 673: EECON2=0x55;
+  1634  0078E6  0E55               	movlw	85
+  1635  0078E8  6EA7               	movwf	4007,c	;volatile
+  1636                           ;bootldr.c: 674: EECON2=0xAA;
+  1637  0078EA  0EAA               	movlw	170
+  1638  0078EC  6EA7               	movwf	4007,c	;volatile
+  1639                           ;bootldr.c: 675: WR=1;
+  1640  0078EE  82A6               	bsf	4006,1,c	;volatile
+  1641                           ;bootldr.c: 676: asm("\tNOP");
+  1642  0078F0  F000               	nop		;#
+  1643                           ;bootldr.c: 677: }
+  1644  0078F2  0012               	return	
+  1645  0078F4  FFFF               	dw	65535
+  1646  0078F6  D7EA               	goto	f4622
+  1647                           ;bootldr.c: 679: unsigned char
+  1648                           ;bootldr.c: 680: read_EE(unsigned char loc)
+  1649                           ;bootldr.c: 681: {
+  1650  0078F8                     _read_EE:
+  1651  0078F8  FFFF               	dw	65535
+  1652  0078FA                     f4632:
+  1653  000000                     
+  1654                           ;bootldr.c: 682: unsigned char val;
+  1655  0078FA  9CA6               	bcf	4006,6,c
+  1656                           ;bootldr.c: 684: EEADR = loc;
+  1657  0078FC  6EA9               	movwf	4009,c	;volatile
+  1658                           ;bootldr.c: 685: EEPGD = 0;
+  1659  0078FE  9EA6               	bcf	4006,7,c
+  1660                           ;bootldr.c: 686: RD = 1;
+  1661  007900  80A6               	bsf	4006,0,c	;volatile
+  1662                           ;bootldr.c: 687: val = EEDATA;
+  1663  007902  50A8               	movf	4008,w,c	;volatile
+  1664  007904  6ED9               	movwf	fsr2l,c
+  1665                           ;bootldr.c: 688: return val;
+  1666  007906  50D9               	movf	fsr2l,w,c
+  1667                           ;bootldr.c: 689: }
+  1668  007908  0012               	return	
+  1669  00790A  FFFF               	dw	65535
+  1670  00790C  D7F6               	goto	f4632
+  1671  00790E  050B               	dw	?_read_config
+  1672  007910                     _read_config:
+  1673  007910  FFFF               	dw	65535
+  1674  007912                     f4642:
+  1675  000000                     
+  1676                           ;bootldr.c: 694: CFGS = 1;
+  1677  007912  8CA6               	bsf	4006,6,c
+  1678                           ;bootldr.c: 695: load_tbl_ptr(dest_addr);
+  1679  007914  C50B  F587         	movff	?_read_config,?_load_tbl_ptr
+  1680  007918  C50C  F588         	movff	?_read_config+1,?_load_tbl_ptr+1
+  1681  00791C  C50D  F589         	movff	?_read_config+2,?_load_tbl_ptr+2
+  1682  007920  C50E  F58A         	movff	?_read_config+3,?_load_tbl_ptr+3
+  1683  007924  DFB8               	call	_load_tbl_ptr	;wreg free
+  1684                           ;bootldr.c: 696: asm("\tTBLRD*+");
+  1685  007926  0009               	tblrd		*+	;#
+  1686                           ;bootldr.c: 697: return TABLAT;
+  1687  007928  50F5               	movf	tablat,w,c	;volatile
+  1688                           ;bootldr.c: 698: }
+  1689  00792A  0012               	return	
+  1690  00792C  FFFF               	dw	65535
+  1691  00792E  D7F1               	goto	f4642
+  1692                           ;bootldr.c: 700: void
+  1693                           ;bootldr.c: 701: send_reg(void)
+  1694                           ;bootldr.c: 702: {
+  1695  007930                     _send_reg:
+  1696  007930  FFFF               	dw	65535
+  1697  007932                     f4652:
+  1698  000000                     
+  1699                           ;bootldr.c: 703: unsigned int i;
+  1700  007932  6EF4               	movwf	prodh,c
+  1701                           ;bootldr.c: 717: intcon_tmp = INTCON;
+  1702  007934  50F2               	movf	intcon,w,c	;volatile
+  1703  007936  6E01               	movwf	btemp+1
+  1704                           ;bootldr.c: 718: GIE = 0;
+  1705  007938  9EF2               	bcf	intcon,7,c
+  1706                           ;bootldr.c: 719: SWDTEN = 0;
+  1707  00793A  90D1               	bcf	4049,0,c
+  1708                           ;bootldr.c: 720: pir1_tmp = PIR1;
+  1709  00793C  509E               	movf	3998,w,c	;volatile
+  1710  00793E  6E00               	movwf	btemp
+  1711                           ;bootldr.c: 721: status_tmp = STATUS;
+  1712  007940  50D8               	movf	status,w,c	;volatile
+  1713  007942  6EE1               	movwf	fsr1l,c
+  1714                           ;bootldr.c: 722: spbrg_tmp = SPBRG;
+  1715  007944  50AF               	movf	4015,w,c
+  1716  007946  6EF3               	movwf	prodl,c
+  1717                           ;bootldr.c: 723: txsta_tmp = TXSTA;
+  1718  007948  50AC               	movf	4012,w,c	;volatile
+  1719  00794A  0105               	movlb	__Lparam shr (0+8)
+  1720  00794C  6F0B               	movwf	?a_send_reg^(__Lparam& (0+65280))
+  1721                           ;bootldr.c: 724: rcsta_tmp = RCSTA;
+  1722  00794E  50AB               	movf	4011,w,c	;volatile
+  1723  007950  6E03               	movwf	btemp+3
+  1724                           ;bootldr.c: 725: txreg_tmp = TXREG;
+  1725  007952  50AD               	movf	4013,w,c	;volatile
+  1726  007954  6E02               	movwf	btemp+2
+  1727                           ;bootldr.c: 726: bootldr_init_serial(4);
+  1728  007956  0E04               	movlw	4
+  1729  007958  DEAD               	call	_bootldr_init_serial
+  1730                           ;bootldr.c: 727: bootldr_putch('S');
+  1731  00795A  0E53               	movlw	83
+  1732  00795C  DE78               	call	_bootldr_putch
+  1733                           ;bootldr.c: 728: bootldr_putch('F');
+  1734  00795E  0E46               	movlw	70
+  1735  007960  DE76               	call	_bootldr_putch
+  1736                           ;bootldr.c: 729: bootldr_putch('R');
+  1737  007962  0E52               	movlw	82
+  1738  007964  DE74               	call	_bootldr_putch
+  1739                           ;bootldr.c: 730: bootldr_putch(TOSU);
+  1740  007966  50FF               	movf	tosu,w,c	;volatile
+  1741  007968  DE72               	call	_bootldr_putch
+  1742                           ;bootldr.c: 731: bootldr_putch(TOSH);
+  1743  00796A  50FE               	movf	tosh,w,c	;volatile
+  1744  00796C  DE70               	call	_bootldr_putch
+  1745                           ;bootldr.c: 732: bootldr_putch(TOSL);
+  1746  00796E  50FD               	movf	tosl,w,c	;volatile
+  1747  007970  DE6E               	call	_bootldr_putch
+  1748                           ;bootldr.c: 733: bootldr_putch(STKPTR);
+  1749  007972  50FC               	movf	stkptr,w,c	;volatile
+  1750  007974  DE6C               	call	_bootldr_putch
+  1751                           ;bootldr.c: 734: bootldr_putch(PCLATU);
+  1752  007976  50FB               	movf	pclatu,w,c	;volatile
+  1753  007978  DE6A               	call	_bootldr_putch
+  1754                           ;bootldr.c: 735: bootldr_putch(PCLATH);
+  1755  00797A  50FA               	movf	pclath,w,c	;volatile
+  1756  00797C  DE68               	call	_bootldr_putch
+  1757                           ;bootldr.c: 736: bootldr_putch(PCL);
+  1758  00797E  50F9               	movf	pcl,w,c	;volatile
+  1759  007980  DE66               	call	_bootldr_putch
+  1760                           ;bootldr.c: 737: bootldr_putch(TBLPTRU);
+  1761  007982  50F8               	movf	tblptru,w,c	;volatile
+  1762  007984  DE64               	call	_bootldr_putch
+  1763                           ;bootldr.c: 738: bootldr_putch(TBLPTRH);
+  1764  007986  50F7               	movf	tblptrh,w,c	;volatile
+  1765  007988  DE62               	call	_bootldr_putch
+  1766                           ;bootldr.c: 739: bootldr_putch(TBLPTRL);
+  1767  00798A  50F6               	movf	tblptrl,w,c	;volatile
+  1768  00798C  DE60               	call	_bootldr_putch
+  1769                           ;bootldr.c: 740: bootldr_putch(TABLAT);
+  1770  00798E  50F5               	movf	tablat,w,c	;volatile
+  1771  007990  DE5E               	call	_bootldr_putch
+  1772                           ;bootldr.c: 741: bootldr_putch(PRODH);
+  1773  007992  50F4               	movf	prodh,w,c	;volatile
+  1774  007994  DE5C               	call	_bootldr_putch
+  1775                           ;bootldr.c: 742: bootldr_putch(PRODL);
+  1776  007996  50F3               	movf	prodl,w,c	;volatile
+  1777  007998  DE5A               	call	_bootldr_putch
+  1778                           ;bootldr.c: 743: bootldr_putch(intcon_tmp);
+  1779  00799A  5001               	movf	btemp+1,w
+  1780  00799C  DE58               	call	_bootldr_putch
+  1781                           ;bootldr.c: 744: bootldr_putch(INTCON2);
+  1782  00799E  50F1               	movf	intcon2,w,c
+  1783  0079A0  DE56               	call	_bootldr_putch
+  1784                           ;bootldr.c: 745: bootldr_putch(INTCON3);
+  1785  0079A2  50F0               	movf	intcon3,w,c	;volatile
+  1786  0079A4  DE54               	call	_bootldr_putch
+  1787                           ;bootldr.c: 746: bootldr_putch(FSR0H);
+  1788  0079A6  50EA               	movf	fsr0h,w,c	;volatile
+  1789  0079A8  DE52               	call	_bootldr_putch
+  1790                           ;bootldr.c: 747: bootldr_putch(FSR0L);
+  1791  0079AA  50E9               	movf	fsr0l,w,c	;volatile
+  1792  0079AC  DE50               	call	_bootldr_putch
+  1793                           ;bootldr.c: 748: bootldr_putch(wreg_tmp);
+  1794  0079AE  50F4               	movf	prodh,w,c
+  1795  0079B0  DE4E               	call	_bootldr_putch
+  1796                           ;bootldr.c: 749: bootldr_putch(FSR1H);
+  1797  0079B2  50E2               	movf	fsr1h,w,c	;volatile
+  1798  0079B4  DE4C               	call	_bootldr_putch
+  1799                           ;bootldr.c: 750: bootldr_putch(FSR1L);
+  1800  0079B6  50E1               	movf	fsr1l,w,c	;volatile
+  1801  0079B8  DE4A               	call	_bootldr_putch
+  1802                           ;bootldr.c: 751: bootldr_putch(BSR);
+  1803  0079BA  50E0               	movf	bsr,w,c
+  1804  0079BC  DE48               	call	_bootldr_putch
+  1805                           ;bootldr.c: 752: bootldr_putch(FSR2H);
+  1806  0079BE  50DA               	movf	fsr2h,w,c	;volatile
+  1807  0079C0  DE46               	call	_bootldr_putch
+  1808                           ;bootldr.c: 753: bootldr_putch(FSR2L);
+  1809  0079C2  50D9               	movf	fsr2l,w,c	;volatile
+  1810  0079C4  DE44               	call	_bootldr_putch
+  1811                           ;bootldr.c: 754: bootldr_putch(status_tmp);
+  1812  0079C6  50E1               	movf	fsr1l,w,c
+  1813  0079C8  DE42               	call	_bootldr_putch
+  1814                           ;bootldr.c: 755: bootldr_putch(TMR0H);
+  1815  0079CA  50D7               	movf	4055,w,c	;volatile
+  1816  0079CC  DE40               	call	_bootldr_putch
+  1817                           ;bootldr.c: 756: bootldr_putch(TMR0L);
+  1818  0079CE  50D6               	movf	4054,w,c	;volatile
+  1819  0079D0  DE3E               	call	_bootldr_putch
+  1820                           ;bootldr.c: 757: bootldr_putch(T0CON);
+  1821  0079D2  50D5               	movf	4053,w,c
+  1822  0079D4  DE3C               	call	_bootldr_putch
+  1823                           ;bootldr.c: 758: bootldr_putch(OSCCON);
+  1824  0079D6  50D3               	movf	4051,w,c	;volatile
+  1825  0079D8  DE3A               	call	_bootldr_putch
+  1826                           ;bootldr.c: 759: bootldr_putch(LVDCON);
+  1827  0079DA  50D2               	movf	4050,w,c	;volatile
+  1828  0079DC  DE38               	call	_bootldr_putch
+  1829                           ;bootldr.c: 760: bootldr_putch(WDTCON);
+  1830  0079DE  50D1               	movf	4049,w,c
+  1831  0079E0  DE36               	call	_bootldr_putch
+  1832                           ;bootldr.c: 761: bootldr_putch(RCON);
+  1833  0079E2  50D0               	movf	4048,w,c	;volatile
+  1834  0079E4  DE34               	call	_bootldr_putch
+  1835                           ;bootldr.c: 762: bootldr_putch(TMR1H);
+  1836  0079E6  50CF               	movf	4047,w,c	;volatile
+  1837  0079E8  DE32               	call	_bootldr_putch
+  1838                           ;bootldr.c: 763: bootldr_putch(TMR1L);
+  1839  0079EA  50CE               	movf	4046,w,c	;volatile
+  1840  0079EC  DE30               	call	_bootldr_putch
+  1841                           ;bootldr.c: 764: bootldr_putch(T1CON);
+  1842  0079EE  50CD               	movf	4045,w,c
+  1843  0079F0  DE2E               	call	_bootldr_putch
+  1844                           ;bootldr.c: 765: bootldr_putch(TMR2);
+  1845  0079F2  50CC               	movf	4044,w,c	;volatile
+  1846  0079F4  DE2C               	call	_bootldr_putch
+  1847                           ;bootldr.c: 766: bootldr_putch(PR2);
+  1848  0079F6  50CB               	movf	4043,w,c	;volatile
+  1849  0079F8  DE2A               	call	_bootldr_putch
+  1850                           ;bootldr.c: 767: bootldr_putch(T2CON);
+  1851  0079FA  50CA               	movf	4042,w,c
+  1852  0079FC  DE28               	call	_bootldr_putch
+  1853                           ;bootldr.c: 768: bootldr_putch(SSPBUF);
+  1854  0079FE  50C9               	movf	4041,w,c	;volatile
+  1855  007A00  DE26               	call	_bootldr_putch
+  1856                           ;bootldr.c: 769: bootldr_putch(SSPADD);
+  1857  007A02  50C8               	movf	4040,w,c	;volatile
+  1858  007A04  DE24               	call	_bootldr_putch
+  1859                           ;bootldr.c: 770: bootldr_putch(SSPSTAT);
+  1860  007A06  50C7               	movf	4039,w,c	;volatile
+  1861  007A08  DE22               	call	_bootldr_putch
+  1862                           ;bootldr.c: 771: bootldr_putch(SSPCON1);
+  1863  007A0A  50C6               	movf	4038,w,c	;volatile
+  1864  007A0C  DE20               	call	_bootldr_putch
+  1865                           ;bootldr.c: 772: bootldr_putch(SSPCON2);
+  1866  007A0E  50C5               	movf	4037,w,c	;volatile
+  1867  007A10  DE1E               	call	_bootldr_putch
+  1868                           ;bootldr.c: 773: bootldr_putch(ADRESH);
+  1869  007A12  50C4               	movf	4036,w,c	;volatile
+  1870  007A14  DE1C               	call	_bootldr_putch
+  1871                           ;bootldr.c: 774: bootldr_putch(ADRESL);
+  1872  007A16  50C3               	movf	4035,w,c	;volatile
+  1873  007A18  DE1A               	call	_bootldr_putch
+  1874                           ;bootldr.c: 775: bootldr_putch(ADCON0);
+  1875  007A1A  50C2               	movf	4034,w,c	;volatile
+  1876  007A1C  DE18               	call	_bootldr_putch
+  1877                           ;bootldr.c: 776: bootldr_putch(ADCON1);
+  1878  007A1E  50C1               	movf	4033,w,c
+  1879  007A20  DE16               	call	_bootldr_putch
+  1880                           ;bootldr.c: 777: bootldr_putch(CCPR1H);
+  1881  007A22  50BF               	movf	4031,w,c	;volatile
+  1882  007A24  DE14               	call	_bootldr_putch
+  1883                           ;bootldr.c: 778: bootldr_putch(CCPR1L);
+  1884  007A26  50BE               	movf	4030,w,c	;volatile
+  1885  007A28  DE12               	call	_bootldr_putch
+  1886                           ;bootldr.c: 779: bootldr_putch(CCP1CON);
+  1887  007A2A  50BD               	movf	4029,w,c	;volatile
+  1888  007A2C  DE10               	call	_bootldr_putch
+  1889                           ;bootldr.c: 780: bootldr_putch(CCPR2H);
+  1890  007A2E  50BC               	movf	4028,w,c	;volatile
+  1891  007A30  DE0E               	call	_bootldr_putch
+  1892                           ;bootldr.c: 781: bootldr_putch(CCPR2L);
+  1893  007A32  50BB               	movf	4027,w,c	;volatile
+  1894  007A34  DE0C               	call	_bootldr_putch
+  1895                           ;bootldr.c: 782: bootldr_putch(CCP2CON);
+  1896  007A36  50BA               	movf	4026,w,c	;volatile
+  1897  007A38  DE0A               	call	_bootldr_putch
+  1898                           ;bootldr.c: 783: bootldr_putch(TMR3H);
+  1899  007A3A  50B3               	movf	4019,w,c	;volatile
+  1900  007A3C  DE08               	call	_bootldr_putch
+  1901                           ;bootldr.c: 784: bootldr_putch(TMR3L);
+  1902  007A3E  50B2               	movf	4018,w,c	;volatile
+  1903  007A40  DE06               	call	_bootldr_putch
+  1904                           ;bootldr.c: 785: bootldr_putch(T3CON);
+  1905  007A42  50B1               	movf	4017,w,c
+  1906  007A44  DE04               	call	_bootldr_putch
+  1907                           ;bootldr.c: 786: bootldr_putch(spbrg_tmp);
+  1908  007A46  50F3               	movf	prodl,w,c
+  1909  007A48  DE02               	call	_bootldr_putch
+  1910                           ;bootldr.c: 787: bootldr_putch(RCREG);
+  1911  007A4A  50AE               	movf	4014,w,c	;volatile
+  1912  007A4C  DE00               	call	_bootldr_putch
+  1913                           ;bootldr.c: 788: bootldr_putch(txreg_tmp);
+  1914  007A4E  5002               	movf	btemp+2,w
+  1915  007A50  DDFE               	call	_bootldr_putch
+  1916                           ;bootldr.c: 789: bootldr_putch(txsta_tmp);
+  1917  007A52  0105               	movlb	__Lparam shr (0+8)
+  1918  007A54  510B               	movf	?a_send_reg^(__Lparam& (0+65280)),w
+  1919  007A56  DDFB               	call	_bootldr_putch
+  1920                           ;bootldr.c: 790: bootldr_putch(rcsta_tmp);
+  1921  007A58  5003               	movf	btemp+3,w
+  1922  007A5A  DDF9               	call	_bootldr_putch
+  1923                           ;bootldr.c: 791: bootldr_putch(EEADR);
+  1924  007A5C  50A9               	movf	4009,w,c	;volatile
+  1925  007A5E  DDF7               	call	_bootldr_putch
+  1926                           ;bootldr.c: 792: bootldr_putch(EEDATA);
+  1927  007A60  50A8               	movf	4008,w,c	;volatile
+  1928  007A62  DDF5               	call	_bootldr_putch
+  1929                           ;bootldr.c: 793: bootldr_putch(EECON2);
+  1930  007A64  50A7               	movf	4007,w,c	;volatile
+  1931  007A66  DDF3               	call	_bootldr_putch
+  1932                           ;bootldr.c: 794: bootldr_putch(EECON1);
+  1933  007A68  50A6               	movf	4006,w,c	;volatile
+  1934  007A6A  DDF1               	call	_bootldr_putch
+  1935                           ;bootldr.c: 795: bootldr_putch(IPR2);
+  1936  007A6C  50A2               	movf	4002,w,c
+  1937  007A6E  DDEF               	call	_bootldr_putch
+  1938                           ;bootldr.c: 796: bootldr_putch(PIR2);
+  1939  007A70  50A1               	movf	4001,w,c	;volatile
+  1940  007A72  DDED               	call	_bootldr_putch
+  1941                           ;bootldr.c: 797: bootldr_putch(PIE2);
+  1942  007A74  50A0               	movf	4000,w,c
+  1943  007A76  DDEB               	call	_bootldr_putch
+  1944                           ;bootldr.c: 798: bootldr_putch(IPR1);
+  1945  007A78  509F               	movf	3999,w,c
+  1946  007A7A  DDE9               	call	_bootldr_putch
+  1947                           ;bootldr.c: 799: bootldr_putch(pir1_tmp);
+  1948  007A7C  5000               	movf	btemp,w
+  1949  007A7E  DDE7               	call	_bootldr_putch
+  1950                           ;bootldr.c: 800: bootldr_putch(PIE1);
+  1951  007A80  509D               	movf	3997,w,c
+  1952  007A82  DDE5               	call	_bootldr_putch
+  1953                           ;bootldr.c: 802: bootldr_putch(TRISE);
+  1954  007A84  5096               	movf	3990,w,c	;volatile
+  1955  007A86  DDE3               	call	_bootldr_putch
+  1956                           ;bootldr.c: 803: bootldr_putch(TRISD);
+  1957  007A88  5095               	movf	3989,w,c	;volatile
+  1958  007A8A  DDE1               	call	_bootldr_putch
+  1959                           ;bootldr.c: 809: bootldr_putch(TRISC);
+  1960  007A8C  5094               	movf	3988,w,c	;volatile
+  1961  007A8E  DDDF               	call	_bootldr_putch
+  1962                           ;bootldr.c: 810: bootldr_putch(TRISB);
+  1963  007A90  5093               	movf	3987,w,c	;volatile
+  1964  007A92  DDDD               	call	_bootldr_putch
+  1965                           ;bootldr.c: 811: bootldr_putch(TRISA);
+  1966  007A94  5092               	movf	3986,w,c	;volatile
+  1967  007A96  DDDB               	call	_bootldr_putch
+  1968                           ;bootldr.c: 813: bootldr_putch(LATE);
+  1969  007A98  508D               	movf	3981,w,c	;volatile
+  1970  007A9A  DDD9               	call	_bootldr_putch
+  1971                           ;bootldr.c: 814: bootldr_putch(LATD);
+  1972  007A9C  508C               	movf	3980,w,c	;volatile
+  1973  007A9E  DDD7               	call	_bootldr_putch
+  1974                           ;bootldr.c: 820: bootldr_putch(LATC);
+  1975  007AA0  508B               	movf	3979,w,c	;volatile
+  1976  007AA2  DDD5               	call	_bootldr_putch
+  1977                           ;bootldr.c: 821: bootldr_putch(LATB);
+  1978  007AA4  508A               	movf	3978,w,c	;volatile
+  1979  007AA6  DDD3               	call	_bootldr_putch
+  1980                           ;bootldr.c: 822: bootldr_putch(LATA);
+  1981  007AA8  5089               	movf	3977,w,c	;volatile
+  1982  007AAA  DDD1               	call	_bootldr_putch
+  1983                           ;bootldr.c: 824: bootldr_putch(PORTE);
+  1984  007AAC  5084               	movf	3972,w,c	;volatile
+  1985  007AAE  DDCF               	call	_bootldr_putch
+  1986                           ;bootldr.c: 825: bootldr_putch(PORTD);
+  1987  007AB0  5083               	movf	3971,w,c	;volatile
+  1988  007AB2  DDCD               	call	_bootldr_putch
+  1989                           ;bootldr.c: 831: bootldr_putch(PORTC);
+  1990  007AB4  5082               	movf	3970,w,c	;volatile
+  1991  007AB6  DDCB               	call	_bootldr_putch
+  1992                           ;bootldr.c: 832: bootldr_putch(PORTB);
+  1993  007AB8  5081               	movf	3969,w,c	;volatile
+  1994  007ABA  DDC9               	call	_bootldr_putch
+  1995                           ;bootldr.c: 833: bootldr_putch(PORTA);
+  1996  007ABC  5080               	movf	3968,w,c	;volatile
+  1997  007ABE  DDC7               	call	_bootldr_putch
+  1998                           ;bootldr.c: 834: FSR0L = 0;
+  1999  007AC0  6AE9               	clrf	fsr0l,c	;volatile
+  2000                           ;bootldr.c: 835: FSR0H = 0;
+  2001  007AC2  6AEA               	clrf	fsr0h,c	;volatile
+  2002                           ;bootldr.c: 836: for (i=0;i<=0x5FF;i++)
+  2003  007AC4  6AF3               	clrf	prodl,c
+  2004  007AC6  6AF4               	clrf	prodh,c
+  2005  007AC8                     l132:
+  2006                           ;bootldr.c: 837: {
+  2007                           ;bootldr.c: 838: bootldr_putch(POSTINC0);
+  2008  007AC8  50EE               	movf	postinc0,w,c	;volatile
+  2009  007ACA  DDC1               	call	_bootldr_putch
+  2010                           ;bootldr.c: 839: }
+  2011  007ACC  4AF3               	infsnz	prodl,f,c
+  2012  007ACE  2AF4               	incf	prodh,f,c
+  2013  007AD0  0E06               	movlw	6
+  2014  007AD2  5CF4               	subwf	prodh,w,c
+  2015  007AD4  0E00               	movlw	0
+  2016  007AD6  B4D8               	btfsc	status,2,c
+  2017  007AD8  5CF3               	subwf	prodl,w,c
+  2018  007ADA  A0D8               	btfss	status,0,c
+  2019  007ADC  D7F5               	goto	l132
+  2020                           ;bootldr.c: 840: for (j=0;j<=0x0FC;j++)
+  2021  007ADE  6AE1               	clrf	fsr1l,c
+  2022  007AE0                     l135:
+  2023                           ;bootldr.c: 841: {
+  2024                           ;bootldr.c: 842: bootldr_putch(read_EE(j));
+  2025  007AE0  50E1               	movf	fsr1l,w,c
+  2026  007AE2  DF0A               	call	_read_EE
+  2027  007AE4  DDB4               	call	_bootldr_putch
+  2028                           ;bootldr.c: 843: }
+  2029  007AE6  2AE1               	incf	fsr1l,f,c
+  2030  007AE8  0EFC               	movlw	-4
+  2031  007AEA  64E1               	cpfsgt	fsr1l,c
+  2032  007AEC  D7F9               	goto	l135
+  2033                           ;bootldr.c: 844: bootldr_putch(read_config(0x200
+      +                          000));
+  2034  007AEE  0105               	movlb	__Lparam shr (0+8)
+  2035  007AF0  6B0B               	clrf	?_read_config^(__Lparam& (0+65280))
+  2036  007AF2  6B0C               	clrf	(?_read_config+1)^(__Lparam& (0+65280))
+  2037  007AF4  0E20               	movlw	32
+  2038  007AF6  6F0D               	movwf	(?_read_config+2)^(__Lparam& (0+65280))
+  2039  007AF8  6B0E               	clrf	(?_read_config+3)^(__Lparam& (0+65280))
+  2040  007AFA  DF0A               	call	_read_config	;wreg free
+  2041  007AFC  DDA8               	call	_bootldr_putch
+  2042                           ;bootldr.c: 845: bootldr_putch(read_config(0x200
+      +                          001));
+  2043  007AFE  0105               	movlb	__Lparam shr (0+8)
+  2044  007B00  0E01               	movlw	1
+  2045  007B02  6F0B               	movwf	?_read_config^(__Lparam& (0+65280))
+  2046  007B04  6B0C               	clrf	(?_read_config+1)^(__Lparam& (0+65280))
+  2047  007B06  0E20               	movlw	32
+  2048  007B08  6F0D               	movwf	(?_read_config+2)^(__Lparam& (0+65280))
+  2049  007B0A  6B0E               	clrf	(?_read_config+3)^(__Lparam& (0+65280))
+  2050  007B0C  DF01               	call	_read_config	;wreg free
+  2051  007B0E  DD9F               	call	_bootldr_putch
+  2052                           ;bootldr.c: 846: bootldr_putch(read_config(0x200
+      +                          002));
+  2053  007B10  0105               	movlb	__Lparam shr (0+8)
+  2054  007B12  0E02               	movlw	2
+  2055  007B14  6F0B               	movwf	?_read_config^(__Lparam& (0+65280))
+  2056  007B16  6B0C               	clrf	(?_read_config+1)^(__Lparam& (0+65280))
+  2057  007B18  0E20               	movlw	32
+  2058  007B1A  6F0D               	movwf	(?_read_config+2)^(__Lparam& (0+65280))
+  2059  007B1C  6B0E               	clrf	(?_read_config+3)^(__Lparam& (0+65280))
+  2060  007B1E  DEF8               	call	_read_config	;wreg free
+  2061  007B20  DD96               	call	_bootldr_putch
+  2062                           ;bootldr.c: 850: while ((TRMT != 1) || (TXIF != 
+      +                          1))
+  2063  007B22                     l138:
+  2064                           ;bootldr.c: 851: {
+  2065  007B22  B2AC               	btfsc	4012,1,c	;volatile
+  2066  007B24  A89E               	btfss	3998,4,c	;volatile
+  2067  007B26  D7FD               	goto	l138
+  2068                           ;bootldr.c: 853: while(1==1)
+  2069  007B28                     l142:
+  2070                           ;bootldr.c: 854: {
+  2071  007B28  DD70               	call	_bootldr_getch	;wreg free
+  2072  007B2A  6ED9               	movwf	fsr2l,c
+  2073                           ;bootldr.c: 856: if (input == 'X')
+  2074  007B2C  50D9               	movf	fsr2l,w,c
+  2075  007B2E  0A58               	xorlw	88
+  2076  007B30  A4D8               	btfss	status,2,c
+  2077  007B32  D002               	goto	l144
+  2078                           ;bootldr.c: 857: {
+  2079  007B34  0E78               	movlw	120
+  2080  007B36  DD8B               	call	_bootldr_putch
+  2081  007B38                     l144:
+  2082                           ;bootldr.c: 859: }
+  2083  007B38  50D9               	movf	fsr2l,w,c
+  2084  007B3A  0A50               	xorlw	80
+  2085  007B3C  A4D8               	btfss	status,2,c
+  2086  007B3E  D002               	goto	l145
+  2087                           ;bootldr.c: 861: {
+  2088  007B40  0E70               	movlw	112
+  2089  007B42  DD85               	call	_bootldr_putch
+  2090  007B44                     l145:
+  2091                           ;bootldr.c: 863: }
+  2092  007B44  50D9               	movf	fsr2l,w,c
+  2093  007B46  0A42               	xorlw	66
+  2094  007B48  A4D8               	btfss	status,2,c
+  2095  007B4A  D007               	goto	l146
+  2096                           ;bootldr.c: 865: {
+  2097  007B4C  0E62               	movlw	98
+  2098  007B4E  DD7F               	call	_bootldr_putch
+  2099                           ;bootldr.c: 867: while ((TRMT != 1) || (TXIF != 
+      +                          1))
+  2100  007B50                     l147:
+  2101                           ;bootldr.c: 868: {
+  2102  007B50  B2AC               	btfsc	4012,1,c	;volatile
+  2103  007B52  A89E               	btfss	3998,4,c	;volatile
+  2104  007B54  D7FD               	goto	l147
+  2105                           ;bootldr.c: 870: asm("goto _boot_loader");
+  2106  007B56  EF05  F038         	goto	_boot_loader	;#
+  2107  007B5A                     l146:
+  2108                           ;bootldr.c: 871: }
+  2109  007B5A  50D9               	movf	fsr2l,w,c
+  2110  007B5C  0A41               	xorlw	65
+  2111  007B5E  B4D8               	btfsc	status,2,c
+  2112  007B60  EF00  F038         	goto	_register_send
+  2113                           ;bootldr.c: 874: {
+  2114                           ;bootldr.c: 876: }
+  2115  007B64  50D9               	movf	fsr2l,w,c
+  2116  007B66  0A52               	xorlw	82
+  2117  007B68  B4D8               	btfsc	status,2,c
+  2118  007B6A  D004               	goto	u790
+  2119  007B6C  50D9               	movf	fsr2l,w,c
+  2120  007B6E  0A55               	xorlw	85
+  2121  007B70  A4D8               	btfss	status,2,c
+  2122  007B72  D7DA               	goto	l142
+  2123  007B74                     u790:
+  2124                           ;bootldr.c: 879: {
+  2125  007B74  0EA8               	movlw	low _application_jump
+  2126  007B76  0105               	movlb	__Lparam shr (0+8)
+  2127  007B78  6F39               	movwf	?_read_program^(__Lparam& (0+65280))
+  2128  007B7A  0E7B               	movlw	high _application_jump
+  2129  007B7C  6F3A               	movwf	(?_read_program^(__Lparam& (0+65280))+1)
+  2130  007B7E  6B3B               	clrf	(?_read_program+2)^(__Lparam& (0+65280))
+  2131  007B80  6B3C               	clrf	(?_read_program+3)^(__Lparam& (0+65280))
+  2132  007B82  0E02               	movlw	2
+  2133  007B84  6F3D               	movwf	(?_read_program+4)^(__Lparam& (0+65280))
+  2134  007B86  0E0C               	movlw	low (?a_send_reg+1)
+  2135  007B88  6F3E               	movwf	(?_read_program+5)^(__Lparam& (0+65280))
+  2136  007B8A  0E05               	movlw	high (?a_send_reg+1)
+  2137  007B8C  6F3F               	movwf	(?_read_program+6)^(__Lparam& (0+65280))
+  2138  007B8E  DD67               	call	_read_program	;wreg free
+  2139                           ;bootldr.c: 881: if (test[1] == 0xEF)
+  2140  007B90  0105               	movlb	__Lparam shr (0+8)
+  2141  007B92  510D               	movf	(?a_send_reg+2)^(__Lparam& (0+65280)),w
+  2142  007B94  0AEF               	xorlw	-17
+  2143  007B96  A4D8               	btfss	status,2,c
+  2144  007B98  D002               	goto	l152
+  2145  007B9A                     u800:
+  2146                           ;bootldr.c: 882: {
+  2147  007B9A  6AFC               	clrf	stkptr,c	;volatile
+  2148                           ;bootldr.c: 884: asm("goto _application_jump");
+  2149  007B9C  D005               	goto	_application_jump	;#
+  2150                           ;bootldr.c: 885: }
+  2151  007B9E                     l152:
+  2152                           ;bootldr.c: 887: {
+  2153  007B9E  6AFC               	clrf	stkptr,c	;volatile
+  2154                           ;bootldr.c: 889: asm("goto _boot_loader");
+  2155  007BA0  EF05  F038         	goto	_boot_loader	;#
+  2156                           ;bootldr.c: 890: }
+  2157                           ;bootldr.c: 891: }
+  2158  007BA4  FFFF               	dw	65535
+  2159  007BA6  D6C5               	goto	f4652
+  2160                           ;bootldr.c: 895: void
+  2161                           ;bootldr.c: 896: application_jump(void)
+  2162                           ;bootldr.c: 897: {
+  2163  007BA8                     _application_jump:
+  2164  007BA8  FFFF               	dw	65535
+  2165  007BAA                     f4662:
+  2166  000000                     
+  2167                           ;bootldr.c: 898: asm(" NOP");
+  2168  007BAA  F000               	nop		;#
+  2169                           ;bootldr.c: 899: }
+  2170  007BAC  0012               	return	
+  2171  007BAE  FFFF               	dw	65535
+  2172  007BB0  D7FC               	goto	f4662
+  2173                           
+  2174                           	psect	bigbss
+  2175  000501                     F854:
+  2176  000501                     	ds	10
+  2177                           
+  2178                           	psect	temp
+  2179  000000                     btemp:
+  2180  000000                     	ds	8
+  2181                           tosu	equ	0xFFF
+  2182                           tosh	equ	0xFFE
+  2183                           tosl	equ	0xFFD
+  2184                           stkptr	equ	0xFFC
+  2185                           pclatu	equ	0xFFB
+  2186                           pclath	equ	0xFFA
+  2187                           pcl	equ	0xFF9
+  2188                           tblptru	equ	0xFF8
+  2189                           tblptrh	equ	0xFF7
+  2190                           tblptrl	equ	0xFF6
+  2191                           tablat	equ	0xFF5
+  2192                           prodh	equ	0xFF4
+  2193                           prodl	equ	0xFF3
+  2194                           intcon	equ	0xFF2
+  2195                           intcon2	equ	0xFF1
+  2196                           intcon3	equ	0xFF0
+  2197                           indf0	equ	0xFEF
+  2198                           postinc0	equ	0xFEE
+  2199                           fsr0h	equ	0xFEA
+  2200                           fsr0l	equ	0xFE9
+  2201                           wreg	equ	0xFE8
+  2202                           indf1	equ	0xFE7
+  2203                           postinc1	equ	0xFE6
+  2204                           fsr1h	equ	0xFE2
+  2205                           fsr1l	equ	0xFE1
+  2206                           bsr	equ	0xFE0
+  2207                           fsr2h	equ	0xFDA
+  2208                           fsr2l	equ	0xFD9
+  2209                           status	equ	0xFD8
+
+
+HI-TECH Software PICC-18 Macro Assembler V8.35PL2
+Symbol Table                                           Fri Jan  7 09:15:20 2005
+
+                              l4 7060                                l7 7082  
+                             l10 75BA                               l11 708A  
+                             l20 70A8                               l12 708E  
+                             l21 70AC                               l31 7106  
+                             l15 7096                               l32 71B0  
+                             l16 7098                               l41 7228  
+                             l17 70A0                               l34 71BA  
+                             l26 70DC                               l43 7542  
+                             l44 7326                               l28 70FA  
+                             l61 74F4                               l45 7320  
+                             l37 71C6                               l29 7100  
+                             l62 74EE                               l54 73DA  
+                             l46 72FA                               l71 753C  
+                             l55 73D4                               l47 729E  
+                             l80 7588                               l81 7556  
+                             l90 7648                               l82 7564  
+                             l66 73EE                               l91 7626  
+                             l83 7574                               l75 7506  
+                             l67 74E8                               l59 7338  
+                             l92 761C                               l84 7582  
+                             l68 74B4                               l77 7532  
+                             l94 7646                               l86 7592  
+                             l87 75B2                               l98 7650  
+                             u15 7036                               u25 705E  
+                            F854 0501                              l110 774A  
+                            l111 774E                              l112 7770  
+                            l104 768C                              l121 7844  
+                            l115 779E                              l107 772E  
+                            l132 7AC8                              l124 7850  
+                            l116 7786                              l142 7B28  
+                            l118 77E8                              l135 7AE0  
+                            l119 77DE                              l152 7B9E  
+                            l144 7B38                              l145 7B44  
+                            l146 7B5A                              l138 7B22  
+                            l147 7B50                              u305 7372  
+                            u145 7160                              u235 728C  
+                            u190 725C                              u360 7448  
+                            u620 7864                              u630 787A  
+                            u800 7B9A                              u640 788E  
+                            u570 76AE                              u395 7428  
+                            u790 7B74                              wreg 000FE8  
+                  ?_eeprom_write 0539                    _bootldr_getch 760A  
+          ?a_bootldr_init_serial 0539                    _bootldr_putch 764E  
+                           f4442 7002                             f4612 7898  
+                           f4452 700C                             f4622 78CC  
+                           f4632 78FA                             f4552 760C  
+                           f4642 7912                             f4562 7650  
+                           f4652 7932                             f4572 7660  
+                           f4662 7BAA                             f4582 76B6  
+                           f4592 7702                             fsr0h 000FEA  
+                           fsr1h 000FE2                             indf0 000FEF  
+                           fsr0l 000FE9                             indf1 000FE7  
+                           fsr1l 000FE1                             fsr2l 000FD9  
+                           btemp 0000                             llsll 7C18  
+                           llslr 7C30                             prodh 000FF4  
+                           prodl 000FF3                         clear_big 001A  
+                       _send_reg 7930                    _register_send 7000  
+              ?a_ldr_flash_write 0540                       used_btemp0 0001  
+                     used_btemp1 0001                       used_btemp2 0001  
+                     used_btemp3 0001                       used_btemp4 0001  
+                     used_btemp5 0001                       used_btemp6 0001  
+                     used_btemp7 0001                       ?a_send_reg 050B  
+                          status 000FD8                      _boot_loader 700A  
+                        __Lparam 050B              _bootldr_init_serial 76B4  
+                        __ramtop 0600                    ?a_boot_loader 050B  
+                   _load_tbl_ptr 7896                          _read_EE 78F8  
+                   _read_program 765E                      _read_config 7910  
+                  ?_load_tbl_ptr 0587                 _application_jump 7BA8  
+                   _eeprom_write 7BB4                  _ldr_FLASH_ERASE 78CA  
+               ?_ldr_FLASH_ERASE 0583                     ?_read_config 050B  
+                _ldr_flash_write 7700                    ?_read_program 0539  
+               ?_ldr_flash_write 0539  

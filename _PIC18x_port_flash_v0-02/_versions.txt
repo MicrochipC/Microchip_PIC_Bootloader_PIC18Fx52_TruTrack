@@ -1,0 +1,14 @@
+v0-00
+
+Base: none
+Zip: "PIC18x_port_flash_v0-00.zip"
+
+Purpose: test out dev board to see if it's working fine. Uses PIC18F252, flashes LED on RC0 at 2Hz.
+
+v0-01
+
+Base: "PIC18x_port_flash_v0-00.zip"
+Zip: "PIC18x_port_flash_v0-01.zip"
+
+Works at 3.68Mhz. Made it so that <8Mhz is XT, >8Mhz is HS.
+
