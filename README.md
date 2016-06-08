@@ -10,5 +10,6 @@ For full instructions, see [http://www.microchipc.com/PIC18bootload/](http://www
 
 # Processors supported
 
-- 18F252
-- 18F452
+- PIC18Fx52
+- PIC18F252
+- PIC18F452
