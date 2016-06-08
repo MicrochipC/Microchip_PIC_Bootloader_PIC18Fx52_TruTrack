@@ -4,8 +4,6 @@
 
 Once you have a bootloader set up for your PIC, you can download new .hex files in seconds. Most .hex files work with no modifications!
 
-For full instructions, see [http://www.microchipc.com/PIC18bootload/](http://www.microchipc.com/PIC18bootload/).
-
 > Do you have any improvements to share with the community? We honour 98% of GIT pull requests within a few days!
 
 # Processors supported
@@ -13,3 +11,7 @@ For full instructions, see [http://www.microchipc.com/PIC18bootload/](http://www
 - PIC18Fx52
 - PIC18F252
 - PIC18F452
+
+# Full Instructions
+
+This github respository is for the source code only. For full instructions, see [http://www.microchipc.com/PIC18bootload/](http://www.microchipc.com/PIC18bootload/).
